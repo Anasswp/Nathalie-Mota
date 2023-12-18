@@ -7,8 +7,11 @@ function theme_enqueue_styles()
 }
 
 /* Enregistrement du menu principal */
-function register_my_menu() 
-{
-    register_nav_menu( 'main-menu', __( 'Menu principal', 'text-domain' ) );
+function register_custom_menus() {
+    register_nav_menus(array(
+        'menu_principal' => __('header', 'Photographe'),
+        'menu_secondaire' => __('footer', 'Photographe'),
+    ));
 }
-add_action( 'after_setup_theme', 'register_my_menu' );
+ 
+add_action('init', 'register_custom_menus');
