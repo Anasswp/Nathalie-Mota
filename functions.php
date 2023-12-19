@@ -10,9 +10,17 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
 
 
+add_theme_support('custom-logo', array(
+    'height'      => 100,
+    'width'       => 400,
+    'flex-height' => true,
+    'flex-width'  => true,
+));
+
 /* Enregistrement du menu principal */
 function register_custom_menus()
 {
+    
     register_nav_menus(array(
         'main-menu' => __('Menu Principal', 'Nathalie Mota'), 
         'footer-menu' => __('Menu Secondaire', 'Nathalie Mota'), 

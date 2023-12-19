@@ -13,6 +13,9 @@
 
 </head>
 <body>
+    <div>
+        <?php the_custom_logo() ?>
+    </div>
 
 <?php 
 /*On appelle le menu là où on souhaite l'afficher*/
