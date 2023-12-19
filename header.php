@@ -5,6 +5,12 @@
  */
 ?>
 
+
+<?php 
+/*On appelle le modal*/
+include('templates_part/modal.php');
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
