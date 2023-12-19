@@ -1,31 +1,33 @@
-<?php 
-/**
- * The header
- * @package Nathalie-Mota
- */
-?>
-
-
-<?php 
-/*On appelle le modal*/
-include('templates_part/modal.php');
-?>
-
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <?php wp_head(); ?>
 </head>
+
 <body>
-    <div>
-        <?php the_custom_logo() ?>
-    </div>
+
+    <header>
+        <div>
+            <?php the_custom_logo() ?>
+        </div>
+        <nav>
+            <?php 
+            wp_nav_menu(array(
+                'theme_location' => 'main-menu',
+                'container' => false,
+                'menu_class' => 'menu',
+            ));
+            ?>
+        </nav>
+    </header>
+
+</body>
 
 <?php 
-/*On appelle le menu là où on souhaite l'afficher*/
-wp_nav_menu([
-    'theme_location' => 'main-menu',
-]);
+/*On appelle la modale*/
+include('templates_part/modal.php');
 ?>
+
+</html>
