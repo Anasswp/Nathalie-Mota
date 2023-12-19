@@ -2,17 +2,20 @@
 /*Chargement du style et des scripts pour le bon fonctionnement du theme*/
 function theme_enqueue_styles()
 {
-    wp_enqueue_style('parent-style', get_template_directory_uri(). '/style.css');
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('theme', get_template_directory_uri() . '/css/theme.css');
 }
 
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
 
+
 /* Enregistrement du menu principal */
-function register_custom_menus() {
+function register_custom_menus()
+{
     register_nav_menus(array(
-        'menu_principal' => __('header', 'Nathalie Mota'),
-        'menu_secondaire' => __('footer', 'Nathalie Mota'),
+        'main-menu' => __('Menu Principal', 'Nathalie Mota'), 
+        'footer-menu' => __('Menu Secondaire', 'Nathalie Mota'), 
     ));
 }
  
