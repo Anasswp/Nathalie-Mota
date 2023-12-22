@@ -28,7 +28,7 @@
         /*On appelle la modale dans notre header*/
         include('templates_part/modal.php');
         ?>
-        </div>
+    </div>
 </html>
 
 </body>

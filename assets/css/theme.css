@@ -46,6 +46,47 @@ header {
 
 
 
+/*********** Modal ***********/
+.modale{
+    width: 597px;
+    height: 769px;
+}
+
+.modale-form{
+    border: solid 5px;
+}
+
+.modale-form-image{
+    width: 885.96px;
+    height: 106.05px;
+}
+
+.modale-code{
+    display: flex;
+    justify-content: center;
+}
+
+.name-label,
+.mail-label,
+.image-label,
+.message-label,
+.submit-label{
+    width: 263px;
+    height: 63px;
+    top: 170px;
+    left: 165px;
+    padding: 1px, 0px, 0px, 0px;
+    gap: 2px;
+}
+
+.wpcf7-form-control{
+    width: 263px;
+    height: 40px;
+    border-radius: 8px;
+    border-color: #B8BBC2;
+}
+
+
 /*********** Footer ***********/
 footer {
     display: flex;
