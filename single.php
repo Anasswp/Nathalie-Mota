@@ -1,6 +1,4 @@
-<?php
-	get_header();
-?>
+<?phpget_header();?>
 
 
 
