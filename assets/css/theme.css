@@ -50,6 +50,7 @@ header {
 .modale{
     width: 597px;
     height: 769px;
+    display: none;
 }
 
 .modale-form{
