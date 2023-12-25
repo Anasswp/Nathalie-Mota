@@ -3,8 +3,4 @@
 ?>
 
 
-
-
-
-
 <?php get_footer(); ?>
