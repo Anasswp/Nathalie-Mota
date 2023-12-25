@@ -23,12 +23,11 @@
         </nav>
     </header>
 
-    <div class="modale">
         <?php 
         /*On appelle la modale dans notre header*/
         include('templates_part/modale.php');
         ?>
-    </div>
+  
 </html>
 
 </body>
