@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,7 @@
 <body>
 
     <header>
-        <div class="logo">
+        <div>
             <?php the_custom_logo() ?>
         </div>
         <nav>
@@ -27,7 +26,7 @@
     <div class="modale">
         <?php 
         /*On appelle la modale dans notre header*/
-        include(get_stylesheet_directory(). '/templates_part/modale.php');
+        include('templates_part/modale.php');
         ?>
     </div>
 </html>

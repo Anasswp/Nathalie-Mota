@@ -1,7 +1,7 @@
-<div id="modale">
+
     <button class="modale-button">X</button>
     <div class="modale-form">
-        <img class="modale-form-image" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Contact.png" alt="image du formulaire de contact">
+        <img class="modale-form-image" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Contact header.png" alt="image du formulaire de contact">
 
         <div class="modale-code">
             <?php
@@ -9,5 +9,4 @@
             ?>
         </div>
     </div>
-</div>
 
