@@ -9,7 +9,7 @@
 <body>
 
     <header>
-        <div>
+        <div class="logo">
             <?php the_custom_logo() ?>
         </div>
         <nav>

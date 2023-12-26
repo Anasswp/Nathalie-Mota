@@ -1,21 +1,19 @@
 /*********** Header ***********/
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 80px;
-    box-shadow: 0 4px 4px 0 #00000008;
-    }
-    nav {
-    margin-right: 100px;
-    }
-    .custom-logo-link {
-    margin-left: 100px;
-    }
-    .custom-logo {
-    max-width: 250px;
-    }
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+height: 80px;
+box-shadow: 0 4px 4px 0 #00000008;
+}
+nav {
+margin-right: 100px;
+}
+.logo {
+margin-left: 100px;
+max-width: 250px;
+}
  
 
 /*********** Menu ***********/
@@ -48,12 +46,9 @@ header {
 .modale{
     width:100%;
     height:100%;
-    display:flex;
+    display: none;
     justify-content: center;
     align-items:center;
-    top:0;
-    left:0;
-    z-index: 999;
 }
 
 .modale-contact{
@@ -71,7 +66,7 @@ header {
     overflow : hidden;
     margin-bottom: 10px;
     width:100%;
-    height: 49px;
+    height: 107px;
 }
 
 .modale-informations {    
@@ -81,6 +76,14 @@ header {
     padding: 5px 0 40px;
     max-width: 265px;
     margin: auto;
+}
+
+.modale-informations input{
+    max-width: 280px;
+}
+
+.wpcf7-submit{
+    width: 350px;
 }
 
 .wpcf7-form {
@@ -130,6 +133,8 @@ header {
     width: 263px;
     height: 50px;
 }
+
+
 
 /*********** Footer ***********/
 footer {

@@ -29,3 +29,16 @@ function register_custom_menus()
 }
  
 add_action('init', 'register_custom_menus');
+
+
+
+
+/* Template single-photo pour affichage du custom post type photographie */
+function custom_single_template($single) {
+    global $post;
+    if ($post->post_type === 'photographies') {
+        return get_template_directory() . '/single-photo.php';
+    }
+    return $single;
+}
+add_filter('single_template', 'custom_single_template');
