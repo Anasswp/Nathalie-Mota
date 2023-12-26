@@ -11,6 +11,19 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
 
 
+/*Chargement du script pour afficher modale au clique du bouton contact*/
+function theme_enqueue_script()
+{
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('custom-script', get_template_directory_uri() . '/assets/js/custom-script.js', array('jquery'), '1.0', true);
+}
+
+add_action('wp_enqueue_scripts', 'theme_enqueue_script');
+
+
+
+
+/*Active prise en charge du 'custom logo' dans WordPress*/
 add_theme_support('custom-logo', array(
     'height'      => 100,
     'width'       => 400,
@@ -33,7 +46,7 @@ add_action('init', 'register_custom_menus');
 
 
 
-/* Template single-photo pour affichage du custom post type photographie */
+/* Template single-photo pour affichage du custom_post_type photographies */
 function custom_single_template($single) {
     global $post;
     if ($post->post_type === 'photographies') {

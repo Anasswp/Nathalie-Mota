@@ -4,7 +4,7 @@ $photoTitle = get_query_var('photographies');
 
 $searchParameters = [
     'post_type' =>'photographies',
-    //'name' => $photoTitle,
+    'name' => $photoTitle,
     'posts_per_page' => 1
 ];
 
