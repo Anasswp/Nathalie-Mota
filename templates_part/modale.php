@@ -1,9 +1,9 @@
-<div id="modale">
-    <button class="modale-button">X</button>
-    <div class="modale-form">
-        <img class="modale-form-image" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Contact.png" alt="image du formulaire de contact">
-
-        <div class="modale-code">
+<div class="modale">
+	<div class="modale-contact">
+		<div class="modale-title_container">
+			<img src="<?php echo get_stylesheet_directory_uri() . '/assets/img/Contact.png'; ?>" alt="Contact header">
+		</div>
+		<div class="modale-informations">
             <?php
             echo do_shortcode('[contact-form-7 id="734b309" title="Formulaire de contact - Modale"]');
             ?>
