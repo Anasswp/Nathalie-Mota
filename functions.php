@@ -1,24 +1,17 @@
 <?php
 /*Chargement du style et des scripts pour le bon fonctionnement du theme*/
-function theme_enqueue_styles()
+function theme_enqueue_styles_scripts()
 {
+    // Chargement des styles
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('theme', get_template_directory_uri() . '/assets/css/theme.css');
+
+    // Chargement des scripts
+    wp_enqueue_script('jquery'); // Assurez-vous que jQuery est chargé avant les autres scripts
     wp_enqueue_script('custom-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), null, true);
 }
 
-add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
-
-
-
-/*Chargement du script pour afficher modale au clique du bouton contact*/
-function theme_enqueue_script()
-{
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('custom-script', get_template_directory_uri() . '/assets/js/custom-script.js', array('jquery'), '1.0', true);
-}
-
-add_action('wp_enqueue_scripts', 'theme_enqueue_script');
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles_scripts');
 
 
 
