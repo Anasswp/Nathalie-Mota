@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const boutonContact = document.getElementById(".menu-item-90");
+    const boutonContact = document.getElementById("menu-item-90");
     const modale = document.querySelector(".modale");
     const conteneurModale = document.querySelector(".modale-contact");
 
@@ -11,10 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Fermeture de la modale lorsqu'on clic hors de la modale
+    // Fermeture de la modale lorsqu'on clique hors de la modale
     window.addEventListener('click', (event) => {
         if (event.target === conteneurModale) {
             modale.style.display = "none";
         }
     });
 });
+
