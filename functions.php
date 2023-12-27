@@ -14,8 +14,6 @@ function theme_enqueue_styles_scripts()
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles_scripts');
 
 
-
-
 /*Active prise en charge du 'custom logo' dans WordPress*/
 add_theme_support('custom-logo', array(
     'height'      => 100,
@@ -23,6 +21,7 @@ add_theme_support('custom-logo', array(
     'flex-height' => true,
     'flex-width'  => true,
 ));
+
 
 /* Enregistrement du menu principal */
 function register_custom_menus()
@@ -33,10 +32,8 @@ function register_custom_menus()
         'footer-menu' => __('Menu Secondaire', 'Nathalie Mota'), 
     ));
 }
- 
+
 add_action('init', 'register_custom_menus');
-
-
 
 
 /* Template single-photo pour affichage du custom_post_type photographies */
