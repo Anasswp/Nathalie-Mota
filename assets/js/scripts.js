@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Fermeture de la modale lorsqu'on clique hors de la modale
+    // Fermeture de la modale lorsqu'on clic hors de la modale
     window.addEventListener('click', (event) => {
-        if (!conteneurModale.contains(event.target) && modale.style.display === "block") {
+        if (event.target === conteneurModale) {
             modale.style.display = "none";
         }
     });
