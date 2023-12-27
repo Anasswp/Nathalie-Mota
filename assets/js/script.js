@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () 
-{
+document.addEventListener("DOMContentLoaded", function () {
     const boutonContact = document.getElementById("menu-item-90");
     const modale = document.querySelector(".modale");
     const conteneurModale = document.querySelector(".modale-contact");
