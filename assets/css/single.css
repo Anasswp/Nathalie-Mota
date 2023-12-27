@@ -1,0 +1,24 @@
+.single-post{
+    display: flex;
+    justify-content: space-around;
+}
+
+.single-container{
+    display: flex;
+    align-items: flex-end;
+}
+
+.single-info h2{
+    width: 420px;
+    height: 116px;
+    font-size: 66px;
+    font-style: italic;
+    line-height: 58px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.single-image{
+    width: 563px;
+    height: 844px;
+}

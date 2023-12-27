@@ -3,9 +3,9 @@
 function theme_enqueue_styles_scripts()
 {
     // Chargement des styles
-    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('theme', get_template_directory_uri() . '/assets/css/theme.css');
-
+    wp_enqueue_style( 'single', get_stylesheet_directory_uri() . '/assets/css/single.css');
     // Chargement des scripts
     wp_enqueue_script('jquery');
     wp_enqueue_script('custom-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), null, true);
