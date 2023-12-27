@@ -15,6 +15,7 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles_scripts');
 
 
 
+
 /*Active prise en charge du 'custom logo' dans WordPress*/
 add_theme_support('custom-logo', array(
     'height'      => 100,
