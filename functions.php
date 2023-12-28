@@ -5,14 +5,14 @@ function theme_enqueue_styles_scripts()
     // Chargement des styles
     wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('theme', get_template_directory_uri() . '/assets/css/theme.css');
-    wp_enqueue_style( 'single', get_stylesheet_directory_uri() . '/assets/css/single.css');
+    wp_enqueue_style('single', get_stylesheet_directory_uri() . '/assets/css/single.css');
+
     // Chargement des scripts
     wp_enqueue_script('jquery');
-    wp_enqueue_script('custom-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), null, true);
+    wp_enqueue_script('custom', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), null, true);
 }
 
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles_scripts');
-
 
 
 
@@ -27,7 +27,6 @@ add_theme_support('custom-logo', array(
 /* Enregistrement du menu principal */
 function register_custom_menus()
 {
-    
     register_nav_menus(array(
         'main-menu' => __('Menu Principal', 'Nathalie Mota'), 
         'footer-menu' => __('Menu Secondaire', 'Nathalie Mota'), 
@@ -37,6 +36,17 @@ function register_custom_menus()
 add_action('init', 'register_custom_menus');
 
 
+/* Ajout du filtre pour le bouton Contact */
+function ajouter_id_bouton_contact($atts, $item, $args, $depth) {
+    // On vérifie si c'est le bouton de contact
+    if ($item->title == 'Contact') {
+        $atts['id'] = 'contact-button'; // Remplace 'menu-item-90' par l'ID que je voudrais utiliser
+    }
+
+    return $atts;
+}
+
+add_filter('nav_menu_link_attributes', 'ajouter_id_bouton_contact', 10, 4);
 
 
 /* Template single-photo pour affichage du custom_post_type photographies */
