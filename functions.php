@@ -9,7 +9,7 @@ function theme_enqueue_styles_scripts()
 
     // Chargement des scripts
     wp_enqueue_script('jquery');
-    wp_enqueue_script('custom', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), null, true);
+    wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), null, true);
 }
 
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles_scripts');

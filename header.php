@@ -21,13 +21,14 @@
             ));
             ?>
         </nav>
+
     </header>
 
         <?php 
         /*On appelle la modale dans notre header*/
         include('templates_part/modale.php');
         ?>
-  
+
 </html>
 
 </body>
