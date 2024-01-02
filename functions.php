@@ -11,7 +11,6 @@ function theme_enqueue_styles_scripts()
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles_scripts');
 
 
-
 /*Chargement du style et des scripts pour le bon fonctionnement du theme*/
 function theme_enqueue_styles_custom()
 {
