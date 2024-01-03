@@ -37,6 +37,31 @@ get_header();
         <p>Cette photo vous intéresse ?</p>
         <button class="banner-button">Contact</button>
     </div>
+    <div class="array-post">
+        <?php
+        // Requête pour obtenir le dernier post
+        $args_dernier = array(
+            'post_type' => 'photographies',
+            'posts_per_page' => 1,
+            'orderby' => 'date',
+            'order' => 'DESC',
+        );
+
+        $last_post = new WP_Query($args_dernier);
+
+        // Requête pour obtenir le premier post
+        $args_premier = array(
+            'post_type' => 'photographies',
+            'posts_per_page' => 1,
+            'orderby' => 'date',
+            'order' => 'ASC',
+        );
+
+        $first_post = new WP_Query($args_premier);
+        ?>
+
+
+    </div>
 </div>
 
 
