@@ -1,13 +1,13 @@
+
+//On récupère les éléments du DOM//
 document.addEventListener("DOMContentLoaded", function () {
     const boutonContact = document.getElementById("contact-button");
     const modale = document.querySelector(".modale");
     const conteneurModale = document.querySelector(".modale-contact");
-    console.log(boutonContact);
-    console.log(modale);
-    console.log(conteneurModale);
 
-
+    //Vérifie si la propriété display de la modale est actuellement "flex"
     boutonContact.addEventListener("click", function () {
+        // elle est affichée (display est réglé sur "flex")
         if (modale.style.display === "flex") {
             modale.style.display = "none";
         } else {
@@ -15,11 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Fermeture de la modale lorsqu'on clique hors de la modale
-    window.addEventListener('click', (event) => {
-        if (event.target === conteneurModale) {
+    //Ajout d'un gestionnaire d'événements sur la fenêtre (lorsqu'on clique n'importe où sur la page)
+    document.addEventListener('click', (event) => {
+        if (!conteneurModale.contains(event.target) && event.target !== boutonContact) {
             modale.style.display = "none";
         }
     });
 });
-
