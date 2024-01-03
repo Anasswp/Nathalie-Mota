@@ -1,0 +1,55 @@
+.single-post {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.single-post::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 41%;
+  width: 49%;
+  border-bottom: 1px solid black;
+}
+
+.single-info {
+  text-transform: uppercase;
+}
+
+.single-info h2 {
+  width: 50vw;
+  max-width: 420px;
+  font-size: 3vw;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.single-image {
+  width: 30vw;
+  max-width: 100%;
+  height: auto;
+}
+
+.single-content img {
+  width: auto;
+  height: 100%;
+  max-height: 500px;
+}
+
+.banner-content {
+  display: flex;
+}
+
+.banner-button {
+  font-family: "Space Mono", monospace;
+  background-color: #D8D8D8;
+  cursor: pointer;
+  width: 272px;
+  height: 50px;
+  padding: 8px 15px;
+  border-radius: 2px;
+  gap: 10px;
+  border: 2px solid rgba(0, 0, 0, 0);
+}/*# sourceMappingURL=single.css.map */
