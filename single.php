@@ -31,6 +31,13 @@ get_header();
     </div>
 </div>
 
+<!-- Création du bandeau inférieur -->
+<div class="banner">
+    <div class="banner-content">
+        <p>Cette photo vous intéresse ?</p>
+        <button class="banner-button">Contact</button>
+    </div>
+</div>
 
 
 <?php
