@@ -37,7 +37,7 @@ get_header();
         <p>Cette photo vous intéresse ?</p>
         <button class="banner-button">Contact</button>
     </div>
-    <div class="...">
+    <div class="array-post">
         <!-- Définition des bornes du tableau pour créer une -->
         <?php
         // Requête pour obtenir le dernier post
@@ -47,7 +47,7 @@ get_header();
             'orderby' => 'date',
             'order' => 'DESC',
         );
-        
+
         $last_post = new WP_Query($args_dernier);
 
         // Requête pour obtenir le premier post
@@ -61,21 +61,23 @@ get_header();
         $first_post = new WP_Query($args_premier);
         ?>
 
-        <div class="array-psot">
+        <div class="array-post">
             <div class="previous-post">
                 <!-- Récupération du post précédent par date -->
                 <?php
                 $previous_post = get_previous_post();
-                // Si le post précédent existe, affichage du
+                // Si le post précédent existe, affichage du post
                 if (!empty($previous_post)) :
                 ?>
                     <a href="<?php echo get_permalink($previous_post->ID); ?>">
-                        <img class="previous-post-image" src="<?php echo get_the_post_thumbnail_url($previous_post->ID); ?>">
+                        <img class="previous-post-image" src="<?php echo get_the_post_thumbnail_url($previous_post->ID); ?>" alt="Image précédente">
                     </a>
                 <!-- Si post précédent non-existant, affichage -->
-                <?php else : ?>
+                <?php else : 
+                    $last_post = $last_post->posts[0]; 
+                ?>
                     <a href="<?php echo get_permalink($last_post->ID); ?>">
-                        <img class="previous-post-image" src="<?php echo get_the_post_thumbnail_url($last_post->ID); ?>">
+                        <img class="previous-post-image" src="<?php echo get_the_post_thumbnail_url($last_post->ID); ?>" alt="Image précédente">
                     </a>
                 <?php endif; ?>
             </div>
@@ -84,23 +86,25 @@ get_header();
                 <!-- Récupération du post suivant par date -->
                 <?php
                 $next_post = get_next_post();
-                // Si post suivant existant, affichage du po
+                // Si post suivant existant, affichage du post
                 if (!empty($next_post)) :
                 ?>
                     <a href="<?php echo get_permalink($next_post->ID); ?>">
-                        <img class="next-post-image" src="<?php echo get_the_post_thumbnail_url($next_post->ID); ?>">
+                        <img class="next-post-image" src="<?php echo get_the_post_thumbnail_url($next_post->ID); ?>" alt="Image suivante">
                     </a>
                 <!-- Si post suivant non-existant, affichage -->
-                <?php else : ?>
+                <?php else : 
+                    $first_post = $first_post->posts[0];
+                ?>
                     <a href="<?php echo get_permalink($first_post->ID); ?>">
-                        <img class="next-post-image" src="<?php echo get_the_post_thumbnail_url($first_post->ID); ?>">
+                        <img class="next-post-image" src="<?php echo get_the_post_thumbnail_url($first_post->ID); ?>" alt="Image suivante">
                     </a>
                 <?php endif; ?>
             </div>
-
         </div>
     </div>
 </div>
+
 
 
 <?php
