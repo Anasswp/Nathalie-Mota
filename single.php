@@ -31,13 +31,14 @@ get_header();
     </div>
 </div>
 
-<!-- Création du bandeau inférieur -->
+<!-- Ajout du bandeau d'interactions inférieur -->
 <div class="banner">
     <div class="banner-content">
         <p>Cette photo vous intéresse ?</p>
         <button class="banner-button">Contact</button>
     </div>
-    <div class="array-post">
+    <div class="...">
+        <!-- Définition des bornes du tableau pour créer une -->
         <?php
         // Requête pour obtenir le dernier post
         $args_dernier = array(
@@ -46,7 +47,7 @@ get_header();
             'orderby' => 'date',
             'order' => 'DESC',
         );
-
+        
         $last_post = new WP_Query($args_dernier);
 
         // Requête pour obtenir le premier post
@@ -60,7 +61,44 @@ get_header();
         $first_post = new WP_Query($args_premier);
         ?>
 
+        <div class="array-psot">
+            <div class="previous-post">
+                <!-- Récupération du post précédent par date -->
+                <?php
+                $previous_post = get_previous_post();
+                // Si le post précédent existe, affichage du
+                if (!empty($previous_post)) :
+                ?>
+                    <a href="<?php echo get_permalink($previous_post->ID); ?>">
+                        <img class="previous-post-image" src="<?php echo get_the_post_thumbnail_url($previous_post->ID); ?>">
+                    </a>
+                <!-- Si post précédent non-existant, affichage -->
+                <?php else : ?>
+                    <a href="<?php echo get_permalink($last_post->ID); ?>">
+                        <img class="previous-post-image" src="<?php echo get_the_post_thumbnail_url($last_post->ID); ?>">
+                    </a>
+                <?php endif; ?>
+            </div>
 
+            <div class="next-post">
+                <!-- Récupération du post suivant par date -->
+                <?php
+                $next_post = get_next_post();
+                // Si post suivant existant, affichage du po
+                if (!empty($next_post)) :
+                ?>
+                    <a href="<?php echo get_permalink($next_post->ID); ?>">
+                        <img class="next-post-image" src="<?php echo get_the_post_thumbnail_url($next_post->ID); ?>">
+                    </a>
+                <!-- Si post suivant non-existant, affichage -->
+                <?php else : ?>
+                    <a href="<?php echo get_permalink($first_post->ID); ?>">
+                        <img class="next-post-image" src="<?php echo get_the_post_thumbnail_url($first_post->ID); ?>">
+                    </a>
+                <?php endif; ?>
+            </div>
+
+        </div>
     </div>
 </div>
 
