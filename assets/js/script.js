@@ -2,7 +2,7 @@
 //On récupère les éléments du DOM//
 document.addEventListener("DOMContentLoaded", function () {
     const boutonContact = document.getElementById("contact-button");
-    const modale = document.querySelector(".modale");
+    let modale = document.querySelector(".modale");
     const conteneurModale = document.querySelector(".modale-contact");
 
     //Vérifie si la propriété display de la modale est actuellement "flex"
@@ -21,4 +21,21 @@ document.addEventListener("DOMContentLoaded", function () {
             modale.style.display = "none";
         }
     });
+});
+
+
+document.addEventListener("DOMContentLoaded", function (){
+    const nav = document.querySelector("nav");
+    const contactBouton = document.getElementById("contact-post");
+    let modale = document.querySelector(".modale");
+    const referenceCopy = document.getElementById("single-reference");
+    const modalReference = document.getElementById("modal-reference");
+
+
+    contactBouton.addEventListener("click", function (){
+        nav.classList.add("active");
+        modale.style.display = "flex";
+        modalReference.value = referenceCopy.textContent;
+    });
+    
 });

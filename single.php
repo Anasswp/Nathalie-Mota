@@ -35,7 +35,7 @@ get_header();
 <div class="banner">
     <div class="banner-content">
         <p>Cette photo vous intéresse ?</p>
-        <button class="banner-button">Contact</button>
+        <button class="banner-button" id="contact-post">Contact</button>
     
         <div class="array-post">
             <?php
@@ -68,8 +68,9 @@ get_header();
                     // Si le post précédent existe, affichage du post //
                     if (!empty($previous_post)) :
                     ?>
+                        <img class="previous-post-image" src="<?php echo get_the_post_thumbnail_url($previous_post->ID); ?>" alt="Image précédente">
                         <a href="<?php echo get_permalink($previous_post->ID); ?>">
-                            <img class="previous-post-image" src="<?php echo get_the_post_thumbnail_url($previous_post->ID); ?>" alt="Image précédente">
+                            <img class="fleches fleche-gauche" src="<?php echo get_stylesheet_directory_uri() . '/assets/img/previous-arrow.png' ?>" alt="Flèche de gauche"/>
                         </a>
                     <!-- Si post précédent non-existant, affichage -->
                     <?php else : 
@@ -88,8 +89,9 @@ get_header();
                     // Si post suivant existant, affichage du post //
                     if (!empty($next_post)) :
                     ?>
+                        <img class="next-post-image" src="<?php echo get_the_post_thumbnail_url($next_post->ID); ?>" alt="Image suivante">
                         <a href="<?php echo get_permalink($next_post->ID); ?>">
-                            <img class="next-post-image" src="<?php echo get_the_post_thumbnail_url($next_post->ID); ?>" alt="Image suivante">
+                            <img class="fleches fleche-droite" src="<?php echo get_stylesheet_directory_uri() . '/assets/img/next-arrow.png' ?>" alt="Flèche de droite"/>
                         </a>
                     <!-- Si post suivant non-existant, affichage -->
                     <?php else : 
