@@ -149,7 +149,7 @@ get_header();
                 }
             ?>
         </div>
-        <a href="<?php echo esc_url(home_url('/')); ?>"><button>
+        <a href="<?php echo esc_url(home_url('/')); ?>"><button>Toutes les photos</button></a>
     </div>
 </div>
 
