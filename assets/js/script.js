@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 document.addEventListener("DOMContentLoaded", function (){
     const nav = document.querySelector("nav");
     const contactBouton = document.getElementById("contact-post");
