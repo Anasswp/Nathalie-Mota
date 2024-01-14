@@ -1,13 +1,13 @@
 
-//On récupère les éléments du DOM//
 document.addEventListener("DOMContentLoaded", function () {
     const boutonContact = document.getElementById("contact-button");
+    const boutonContactPost = document.getElementById("contact-post");
     const modale = document.querySelector(".modale");
     const conteneurModale = document.querySelector(".modale-contact");
     const overlay = document.querySelector(".overlay");
 
-    //Vérifie si la propriété display de la modale est actuellement "flex"
-    boutonContact.addEventListener("click", function () {
+    // Fonction pour afficher ou masquer la modale et l'overlay
+    function toggleModale() {
         if (modale.style.display === "flex") {
             modale.style.display = "none";
             overlay.style.display = "none"; // Masquer l'overlay également
@@ -15,16 +15,26 @@ document.addEventListener("DOMContentLoaded", function () {
             modale.style.display = "flex";
             overlay.style.display = "block"; // Afficher l'overlay
         }
+    }
+
+    // Gestionnaire d'événements pour le bouton "contact-button"
+    boutonContact.addEventListener("click", function () {
+        toggleModale();
     });
 
-    //Ajout d'un gestionnaire d'événements sur la fenêtre (lorsqu'on clique n'importe où sur la page)
+    // Gestionnaire d'événements pour le bouton "contact-post"
+    boutonContactPost.addEventListener("click", function () {
+        toggleModale();
+    });
+
+    // Gestionnaire d'événements sur la fenêtre (lorsqu'on clique n'importe où sur la page)
     document.addEventListener('click', (event) => {
-        if (!conteneurModale.contains(event.target) && event.target !== boutonContact) {
-            modale.style.display = "none";
-            overlay.style.display = "none"; // Masquer l'overlay également
+        if (!conteneurModale.contains(event.target) && event.target !== boutonContact && event.target !== boutonContactPost) {
+            toggleModale();
         }
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function (){
