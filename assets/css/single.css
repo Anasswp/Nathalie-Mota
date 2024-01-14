@@ -63,12 +63,15 @@
   border-top: 1px black solid;
 }
 
+.similar-photo, button{
+  font-family: "Space Mono", monospace;
+}
+
 h3{
   font-family: "Space Mono", monospace;
   font-size: 18px;
   font-weight: 400;
-  line-height: 27px;
   letter-spacing: 0.1em;
-  text-align: left;
   text-transform: uppercase;
 }
+
