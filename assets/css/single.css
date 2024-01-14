@@ -55,3 +55,20 @@
   gap: 10px;
   border: 2px solid rgba(0, 0, 0, 0);
 }
+
+
+
+/**Similar photos**/
+.similar-photo{
+  border-top: 1px black solid;
+}
+
+h3{
+  font-family: "Space Mono", monospace;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.1em;
+  text-align: left;
+  text-transform: uppercase;
+}

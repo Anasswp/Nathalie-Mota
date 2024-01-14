@@ -31,7 +31,7 @@ get_header();
     </div>
 </div>
 
-<!-- Ajout du bandeau d'interactions inférieur -->
+<!-- Ajout du bandeau inférieur -->
 <div class="banner">
     <div class="banner-content">
         <p>Cette photo vous intéresse ?</p>
@@ -107,13 +107,14 @@ get_header();
     </div>
 </div>
 
+<?php
+if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 
-
-<!-- Dernière partie de page - Photos apparentées -->
-<div class="...">
+<!-- Dernière partie - Photos similaires -->
+<div class="similar-photo">
     <h3>Vous aimerez aussi</h3>
-    <div class="...">
-        <div class="....">
+    <div class="photo-block">
+        <div class="block-content">
             <?php
                 // Récupération de la catégorie de la photo actu
                 $categories = wp_get_post_terms(get_the_ID(), 'categorie');
@@ -152,6 +153,8 @@ get_header();
         <a href="<?php echo esc_url(home_url('/')); ?>"><button>Toutes les photos</button></a>
     </div>
 </div>
+
+<?php endwhile; endif; ?>
 
 <?php
 get_footer();
