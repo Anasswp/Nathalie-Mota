@@ -109,6 +109,50 @@ get_header();
 
 
 
+<!-- Dernière partie de page - Photos apparentées -->
+<div class="...">
+    <h3>Vous aimerez aussi</h3>
+    <div class="...">
+        <div class="....">
+            <?php
+                // Récupération de la catégorie de la photo actu
+                $categories = wp_get_post_terms(get_the_ID(), 'categorie');
+
+                if ($categories && !is_wp_error($categories)) {
+                    $ID_categories = wp_list_pluck($categories, 'term_id');
+                    
+                    // Récupération de deux photos de la même catégorie
+                    $photos_similaires = new WP_Query(array(
+                        'post_type' => 'photographies',
+                        'posts_per_page' => 2,
+                        'post__not_in' => array(get_the_ID()),
+                        'orderby' => 'rand',
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'categorie',
+                                'field' => 'id',
+                                'terms' => $ID_categories,
+                            ),
+                        ),
+                    ));
+
+                    if ($photos_similaires->have_posts()) {
+                        while ($photos_similaires->have_posts()) {
+                            $photos_similaires->the_post();
+                            // Affichage de la photo similaire 
+                            get_template_part('template_part/photo_block');
+                        }
+                        wp_reset_postdata();
+                    } else {
+                        echo "Aucune photo similaire pour le moment.";
+                    }
+                }
+            ?>
+        </div>
+        <a href="<?php echo esc_url(home_url('/')); ?>"><button>
+    </div>
+</div>
+
 <?php
 get_footer();
 ?>
