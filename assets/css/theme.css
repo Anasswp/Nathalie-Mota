@@ -48,13 +48,25 @@ nav {
 }
 
 /*********** Modal ***********/
-.modale {
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   display: none;
-  justify-content: center;
-  align-items: center;
 }
+
+.modale {
+  position: fixed;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Assure que la modale est au-dessus de l'overlay */
+  display: none;
+}
+
 
 .modale-contact {
   position: relative;
@@ -78,7 +90,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 0 40px;
   max-width: 265px;
   margin: auto;
 }
@@ -96,19 +107,15 @@ nav {
   flex-direction: column;
 }
 
-.wpcf7-form p {
-  padding-top: 25px;
-}
-
 .wpcf7-form p label {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
 .wpcf7-form p input {
-  height: 40px;
+  height: 30px;
   padding: 10px;
 }
 
@@ -121,7 +128,7 @@ nav {
 .wpcf7-form p textarea {
   width: 100%;
   border-radius: 8px;
-  border: 1px solid black;
+  border: 1px solid #B8BBC2;
 }
 
 .wpcf7-form p .wpcf7-text:focus,
@@ -133,9 +140,10 @@ nav {
 .wpcf7-form p .wpcf7-submit {
   font-family: "Space Mono", monospace;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 600;
   width: 263px;
   height: 50px;
+  border: 1px solid #B8BBC2;
 }
 
 /*********** Footer ***********/
