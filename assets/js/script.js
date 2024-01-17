@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function (){
     const referenceCopy = document.getElementById("single-reference");
     const modalReference = document.getElementById("modal-reference");
 
-
     contactBouton.addEventListener("click", function (){
         nav.classList.add("active");
         modale.style.display = "flex";

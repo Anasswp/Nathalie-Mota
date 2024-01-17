@@ -2,7 +2,7 @@
     // Récupération des informations de la photo
     $titre_post = get_the_title();
     $titre_nettoye = sanitize_title($titre_post);
-    $lien_post = get_template_directory_uri() . '/photographies/';
+    $lien_post = get_template_directory_uri() . '/photographies';
     $photo_post = get_the_content();
     $date_post = get_the_date('Y');
     $reference_photo = get_field('reference');
@@ -29,12 +29,12 @@
 ?>
 
 <!-- Affichage du bloc photo -->
-<div class="...">
-    <div class="...">
+<div class="photo-block">
+    <div class="block-post">
         <?php echo $lien_post; ?>
     </div>
     <?php echo $photo_post; ?>
-    <div class="...">
+    <div class="block-detail">
         <div class="...">
             <div class="...">
                 <i class="fa-solid fa-expand full-screen" style=""></i>
