@@ -150,7 +150,7 @@ if( have_posts() ) : while( have_posts() ) : the_post(); ?>
                 }
             ?>
         </div>
-        <a href="<?php echo esc_url(home_url('/')); ?>"><button>Toutes les photos</button></a>
+       
     </div>
 </div>
 
