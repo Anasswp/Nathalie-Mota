@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function toggleModale() {
         if (modale.style.display === "flex") {
             modale.style.display = "none";
-            overlay.style.display = "none"; // Masquer l'overlay également
+            overlay.style.display = "none"; // Masquer l'overlay
         } else {
             modale.style.display = "flex";
             overlay.style.display = "block"; // Afficher l'overlay
@@ -18,19 +18,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Gestionnaire d'événements pour le bouton "contact-button"
-    boutonContact.addEventListener("click", function () {
+    boutonContact.addEventListener("click", function (event) {
+        event.stopPropagation(); // Empêcher la propagation de l'événement
         toggleModale();
     });
 
     // Gestionnaire d'événements pour le bouton "contact-post"
-    boutonContactPost.addEventListener("click", function () {
+    boutonContactPost.addEventListener("click", function (event) {
+        event.stopPropagation(); // Empêcher la propagation de l'événement
         toggleModale();
     });
 
     // Gestionnaire d'événements sur la fenêtre (lorsqu'on clique n'importe où sur la page)
     document.addEventListener('click', (event) => {
         if (!conteneurModale.contains(event.target) && event.target !== boutonContact && event.target !== boutonContactPost) {
-            toggleModale();
+            modale.style.display = "none";
+            overlay.style.display = "none"; // Masquer la modale et l'overlay
         }
     });
 });
@@ -41,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function (){
     const contactBouton = document.getElementById("contact-post");
     let modale = document.querySelector(".modale");
     const referenceCopy = document.getElementById("single-reference");
-    const modalReference = document.getElementById("modal-reference");
+    const modalReference = document.querySelector("#modal-reference input");
 
     contactBouton.addEventListener("click", function (){
         nav.classList.add("active");

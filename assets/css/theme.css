@@ -67,7 +67,6 @@ nav {
   display: none;
 }
 
-
 .modale-contact {
   position: relative;
   background: white;
@@ -146,6 +145,20 @@ nav {
   border: 1px solid #B8BBC2;
 }
 
+
+/***********Photo_block************/
+.block-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  object-fit: none;
+}
+
+.wp-image{
+  width: 564px;
+  height: 495px;
+}
+
 /*********** Footer ***********/
 footer {
   display: flex;
@@ -153,4 +166,4 @@ footer {
   justify-content: center;
   border-top: 1px black solid;
   width: 100%;
-}/*# sourceMappingURL=theme.css.map */
+}

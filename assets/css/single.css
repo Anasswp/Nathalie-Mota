@@ -1,7 +1,12 @@
+.single-container{
+  padding-top: 8%;
+}
+
 .single-post {
   display: flex;
   justify-content: space-around;
   position: relative;
+  padding: 0 100px 0 100px;
 }
 
 .single-post::after {
@@ -27,7 +32,6 @@
 }
 
 .single-image {
-  width: 30vw;
   max-width: 100%;
   height: auto;
 }
@@ -57,10 +61,10 @@
 }
 
 
-
 /**Similar photos**/
 .similar-photo{
   border-top: 1px black solid;
+  padding-bottom: 70px;
 }
 
 .similar-photo, button{
@@ -72,6 +76,7 @@ h3{
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.1em;
+  padding: 40px 0 40px 150px;
   text-transform: uppercase;
 }
 

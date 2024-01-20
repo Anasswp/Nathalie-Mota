@@ -2,7 +2,7 @@
     // Récupération des informations de la photo
     $titre_post = get_the_title();
     $titre_nettoye = sanitize_title($titre_post);
-    $lien_post = get_template_directory_uri() . '/photographies';
+    $lien_post = get_template_directory_uri() . '/photographies/'. $titre_nettoye;
     $photo_post = get_the_content();
     $date_post = get_the_date('Y');
     $reference_photo = get_field('reference');
@@ -17,7 +17,7 @@
             $liste_formats = join(', ', $noms_formats);
         }
 
-    // Récupération de la catégorie de la phot
+    // Récupération de la catégorie de la photo
     $categories = get_the_terms(get_the_ID(), 'categorie');
         if ($categories && !is_wp_error($categories)) {
             $noms_categories = array();
@@ -30,21 +30,16 @@
 
 <!-- Affichage du bloc photo -->
 <div class="photo-block">
-    <div class="block-post">
-        <?php echo $lien_post; ?>
-    </div>
     <?php echo $photo_post; ?>
     <div class="block-detail">
-        <div class="...">
-            <div class="...">
+        <div class="">
+            <div class="">
                 <i class="fa-solid fa-expand full-screen" style=""></i>
             </div>
-            <div class="...">
+            <div class="">
                 <i class="fa-regular fa-eye oeil" style="color:"></i>
             </div>
-            <div class="...">
-                <div class="..."><?php echo $reference_photo ?></div>
-                <div class="..."><?php echo $liste_categories; ?></div>
+            <div class="">
             </div>
         </div>
     </div>

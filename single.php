@@ -118,8 +118,8 @@ if( have_posts() ) : while( have_posts() ) : the_post(); ?>
             <?php
                 // Récupération de la catégorie de la photo actu
                 $categories = wp_get_post_terms(get_the_ID(), 'categorie');
-
                 if ($categories && !is_wp_error($categories)) {
+
                     $ID_categories = wp_list_pluck($categories, 'term_id');
                     
                     // Récupération de deux photos de la même catégorie
@@ -141,7 +141,7 @@ if( have_posts() ) : while( have_posts() ) : the_post(); ?>
                         while ($photos_similaires->have_posts()) {
                             $photos_similaires->the_post();
                             // Affichage de la photo similaire 
-                            get_template_part('template_part/photo_block');
+                            get_template_part('templates_part/photo_block');
                         }
                         wp_reset_postdata();
                     } else {
