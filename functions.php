@@ -6,6 +6,8 @@ function theme_enqueue_styles_scripts()
     // Chargement des scripts
     wp_enqueue_script('jquery');
     wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/script.js');
+    wp_enqueue_script('script-pagination', get_template_directory_uri() . '/js/charger-plus.js');
+    wp_localize_script('script-pagination', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php'), 'nonce'   => wp_create_nonce('ajax-nonce'),));
 }
 
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles_scripts');
@@ -68,3 +70,37 @@ function custom_single_template($single) {
     return $single;
 }
 add_filter('single_template', 'custom_single_template');
+
+
+/* Chargement du contenu supplémentaire */
+// Fonction AJAX pour le charger plus
+function charger_plus() {
+
+    // Vérification du nonce avant exécution de la requête
+    check_ajax_referer('ajax-nonce', 'nonce');
+
+    $page = $_POST['page'];
+    $ordreTriage = $_POST['order'];
+    $args = array(
+        'post_type' => 'photographies',
+        'posts_per_page' => 12,
+        'orderby' => 'date',
+        'order' => $ordreTriage,
+        'paged' => $page,
+    );
+
+    $photo_query = new WP_Query($args);
+
+    if ($photo_query->have_posts()) {
+        while ($photo_query->have_posts()) {
+            $photo_query->the_post();
+            get_template_part('template_part/photo-bloc');
+        }
+        wp_reset_postdata();
+    }
+
+    wp_die();
+}
+
+add_action('wp_ajax_charger_plus', 'charger_plus');
+add_action('wp_ajax_nopriv_charger_plus', 'charger_plus');
