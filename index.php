@@ -3,27 +3,7 @@ get_header();
 ?>
 
     <div class="hero">
-        <h1>Photographe Event</h1>
-        <div class="...">
-            <?php
-            // Affichage aléatoire d'une photo
-            $args = array(
-                'post_type' => 'photographies',
-                'posts_per_page' => 1,
-                'orderby' => 'rand',
-            );
-
-            $photo_aleatoire_hero = new WP_Query($args);
-
-            if ($photo_aleatoire_hero->have_posts()) {
-                while ($photo_aleatoire_hero->have_posts()) {
-                    $photo_aleatoire_hero->the_post();
-                    the_content();
-                }
-                wp_reset_postdata();
-            }
-            ?>
-        </div>
+        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/img/Header.png'; ?>" alt="header">
     </div>
     <div class="bloc-les-photos">
         <div class="filtres">
@@ -102,7 +82,7 @@ get_header();
                 if ($photo_query->have_posts()) {
                     while ($photo_query->have_posts()) {
                         $photo_query->the_post();
-                        get_template_part('template_part/photo-bloc');
+                        get_template_part('templates_part/photo-block');
                     }
                     wp_reset_postdata();
                 } else {
