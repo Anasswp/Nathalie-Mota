@@ -159,6 +159,22 @@ nav {
   height: 495px;
 }
 
+
+/***********Hero************/
+.hero-area .hero-thumbnail {
+  position: relative;
+  margin: auto;
+  align-items: center;
+  width: 100%;
+  max-height: 966px;    
+  overflow: hidden;
+}
+
+
+
+
+
+
 /*********** Footer ***********/
 footer {
   display: flex;
