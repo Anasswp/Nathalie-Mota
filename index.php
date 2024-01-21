@@ -85,8 +85,8 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="affichage-des-photos">
-            <div class="zone-les-photos">
+        <div class="display-photos">
+            <div class="photo-area">
                 <!-- Création d'une loop pour afficher toutes les photos -->
                 <?php
                 $args = array(
