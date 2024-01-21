@@ -111,8 +111,8 @@ get_header();
                 ?>
             </div>
         </div>
-        <div class="bouton-accueil">
-            <button id="charger-plus" class="voir-plus">Charger plus</button>
+        <div class="home-button">
+            <button id="load-more" class="see-more">Charger plus</button>
         </div>
     </div>
 
