@@ -31,15 +31,16 @@
 <!-- Affichage du bloc photo -->
 <div class="photo-block">
     <?php echo $photo_post; ?>
-    <div class="block-detail">
-        <div class="">
-            <div class="">
-                <i class="fa-solid fa-expand full-screen" style=""></i>
+    <div class="photo-details">
+        <div class="icons-container">
+            <div class="icon expand-icon">
+                <i class="fa-solid fa-expand full-screen"></i>
             </div>
-            <div class="">
-                <i class="fa-regular fa-eye oeil" style="color:"></i>
+            <div class="icon eye-icon">
+                <i class="fa-regular fa-eye oeil"></i>
             </div>
-            <div class="">
+            <div class="icon third-icon">
+                <!-- Ajoutez ici le code pour la troisième icône ou laissez vide si vous ne l'utilisez pas -->
             </div>
         </div>
     </div>
