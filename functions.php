@@ -9,6 +9,7 @@ function theme_enqueue_styles_scripts()
     wp_enqueue_script('script-pagination', get_template_directory_uri() . '/js/charger-plus.js');
     wp_localize_script('script-pagination', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php'), 'nonce'   => wp_create_nonce('ajax-nonce'),));
     wp_enqueue_script('script-filtres', get_template_directory_uri() . '/js/homeFilters.js');
+    wp_enqueue_script('script-lightbox', get_template_directory_uri() . '/js/lightbox.js');
 }
 
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles_scripts');
@@ -105,4 +106,6 @@ function charger_plus() {
 
 add_action('wp_ajax_charger_plus', 'charger_plus');
 add_action('wp_ajax_nopriv_charger_plus', 'charger_plus');
+
+
 
