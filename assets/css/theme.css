@@ -265,15 +265,42 @@ form {
 }
 
 
-/*********** Index-Photos ***********/
+/*********** Photos ***********/
+.display-photos {
+  width: 100%;
+  
+  margin: 0 auto 20px;
+}
+
+.photo-area {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes de taille égale */
+  gap: 20px;
+  justify-content: center;
+}
 
 .photo-block {
-  width: 565px;
-  margin: 0 10px 20px;
+  width: 100%;
+  max-width: 565px;
+  height: 400px;
+  margin: 0 auto 20px;
+  overflow: hidden;
+}
+
+.photo-block img {
+  width: 100%;
+  height: 100%; 
+  object-fit: none;
+}
+
+.home-button{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
 }
 
 #load-more {
-  width: 272px;
+  width: 20%;
   height: 50px;
   border-radius: 2px;
   border: 2px solid rgba(0, 0, 0, 0);
@@ -282,7 +309,7 @@ form {
 }
 
 .see-more {
-  width: 89px;
+  width: 100%;
   height: 18px;
   font-family: "Space Mono", monospace;
   font-size: 12px;
@@ -290,6 +317,7 @@ form {
   line-height: 18px;
   letter-spacing: 0em;
 }
+
 
 /*********** Footer ***********/
 footer {
