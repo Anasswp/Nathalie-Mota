@@ -22,6 +22,7 @@ function theme_enqueue_styles_custom()
     wp_enqueue_style('style-custom', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('theme-custom', get_template_directory_uri() . '/assets/css/theme.css');
     wp_enqueue_style('single-custom', get_stylesheet_directory_uri() . '/assets/css/single.css');
+    
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css', array(), null);
     
 }
