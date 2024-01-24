@@ -70,16 +70,19 @@ get_header();
                 </select>
             </div>
         </div>
-        <div class="filterright swiper-slide flexrow">
-            <div id="filtre-date" class="select-filter flexcolumn">           
-                <label for="date"><p>trier par</p></label>
-                <select class="option-filter" name="date" id="date">
-                    <option value=""></option>
-                    <option value="desc" <?php if($order === "desc"): ?>selected<?php endif; ?>>à partir des plus récentes</option>
-                    <option value="asc" <?php if($order === "asc" ): ?>selected<?php endif; ?>>à partir des plus anciennes</option>
-                </select>
-            </div>
-        </div>        
+        <div class="bloc-filtre" id="filtre-tri">
+                <!-- Création du menu déroulant Trier par -->
+                <div class="menu-deroulant" id="tri-titre">
+                    <div class="menu-titre visible">Trier par</div>
+                    <div class="menu-titre cache">Trier par</div>
+                    <i class="fa-solid fa-chevron-down menu-fleche" style="color: #000000;"></i>
+                </div>
+                <div class="menu-options" id="tri-options">
+                    <div class="vide" id="tri-vide"></div>
+                    <div class="menu-option" id="ASC">Des plus anciennes aux plus récentes</div>
+                    <div class="menu-option" id="DESC">Des plus récentes aux plus anciennes</div>
+                </div>
+        </div>   
     </form>
 </div>
         <div class="display-photos">

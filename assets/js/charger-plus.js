@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialisation de la page
     let page = 1;
-    const chargerPlusBouton = document.getElementById('charger-plus');
+    const chargerPlusBouton = document.getElementById('load-more');
     const zoneLesPhotos = document.querySelector('.bloc-les-photos .photo-area');
     const blocLesPhotos = document.querySelector('.bloc-les-photos');
 
