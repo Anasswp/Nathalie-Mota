@@ -77,6 +77,44 @@ document.addEventListener("DOMContentLoaded", function () {
 overlay();
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Gestionnaire d'événements pour l'image précédente
+    const previousPostImage = document.querySelector('.previous-post-image');
+    if (previousPostImage) {
+        previousPostImage.addEventListener('click', function () {
+            // Récupérer l'URL du post précédent
+            const previousPostLink = document.querySelector('.previous-post a');
+            if (previousPostLink) {
+                const previousPostURL = previousPostLink.getAttribute('href');
+                // Rediriger vers l'URL du post précédent
+                if (previousPostURL) {
+                    window.location.href = previousPostURL;
+                }
+            }
+        });
+    }
+
+    // Gestionnaire d'événements pour l'image suivante
+    const nextPostImage = document.querySelector('.next-post-image');
+    if (nextPostImage) {
+        nextPostImage.addEventListener('click', function () {
+            // Récupérer l'URL du post suivant
+            const nextPostLink = document.querySelector('.next-post a');
+            if (nextPostLink) {
+                const nextPostURL = nextPostLink.getAttribute('href');
+                // Rediriger vers l'URL du post suivant
+                if (nextPostURL) {
+                    window.location.href = nextPostURL;
+                }
+            }
+        });
+    }
+});
+
+
+
+
 /////////////////////////////////////////////////////////////////////////
 
 // Overlay des photos de photo-bloc.php
