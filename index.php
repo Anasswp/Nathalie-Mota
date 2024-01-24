@@ -91,7 +91,7 @@ get_header();
                 <?php
                 $args = array(
                     'post_type' => 'photographies',
-                    'posts_per_page' => 12,
+                    'posts_per_page' => 8,
                     'orderby' => 'date',
                     'order' => 'ASC',
                     'paged' => 1,
