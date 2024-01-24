@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     /////////////////////////////////////////////////////////////////////////
     
-    // Overlay des photos de photo-bloc.php
+    // Overlay des photos de photo_block.php
     
     function overlay() {
         // Apparition de l'overlay au survol
