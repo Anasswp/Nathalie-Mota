@@ -60,6 +60,15 @@
   border: 2px solid rgba(0, 0, 0, 0);
 }
 
+.previous-post-image,
+.next-post-image {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+
 
 /**Similar photos**/
 .similar-photo{

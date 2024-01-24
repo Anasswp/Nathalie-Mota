@@ -59,8 +59,7 @@ get_header();
 
             $first_post = new WP_Query($args_premier);
             ?>
-
-            <div class="array-post">
+            
                 <div class="previous-post">
                     <!-- Récupération du post précédent par date -->
                     <?php
@@ -102,7 +101,6 @@ get_header();
                         </a>
                     <?php endif; ?>
                 </div>
-            </div>
         </div>
     </div>
 </div>
