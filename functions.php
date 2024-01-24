@@ -86,7 +86,7 @@ function charger_plus() {
     $ordreTriage = $_POST['order'];
     $args = array(
         'post_type' => 'photographies',
-        'posts_per_page' => 12,
+        'posts_per_page' => 8,
         'orderby' => 'date',
         'order' => $ordreTriage,
         'paged' => $page,

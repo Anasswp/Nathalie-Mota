@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialisation de la page
     let page = 1;
-    const chargerPlusBouton = document.getElementById('load-more');
+    const chargerPlusBouton = document.getElementById('charger-plus');
     const zoneLesPhotos = document.querySelector('.bloc-les-photos .photo-area');
     const blocLesPhotos = document.querySelector('.bloc-les-photos');
 
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 lightbox();
 
                 // Si moins de 12 éléments, le bouton disparait
-                if (figureCompte < 12) {
+                if (figureCompte < 8) {
                     chargerPlusBouton.style.display = 'none';
                 }
 
