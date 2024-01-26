@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialisation de la page
     let page = 1;
     const chargerPlusBouton = document.getElementById('charger-plus');
-    const zoneLesPhotos = document.querySelector('.bloc-les-photos .photo-area');
+    const zoneLesPhotos = document.querySelector('.zone-les-photos');
     const blocLesPhotos = document.querySelector('.bloc-les-photos');
 
     const selectionTriASC = document.getElementById('ASC');

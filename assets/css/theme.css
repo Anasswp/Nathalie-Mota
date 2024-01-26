@@ -199,6 +199,8 @@ nav {
 }
 
 
+
+
 /*********** Filters ***********/
 .filtres {
   width: 100%;
@@ -210,7 +212,7 @@ nav {
 }
 
 #filtre-tri {
-  padding-left: 300px;
+  padding-left: 290px;
 }
 
 .menu-deroulant {
@@ -349,40 +351,7 @@ nav {
 
 
 /*********** Photos ***********/
-.display-photos {
-  width: 100%;
-  
-  margin: 0 auto 20px;
-}
-
-.photo-area {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Deux colonnes de taille égale */
-  gap: 20px;
-  justify-content: center;
-}
-
-.photo-block {
-  width: 100%;
-  max-width: 565px;
-  height: 400px;
-  margin: 0 auto 20px;
-  overflow: hidden;
-}
-
-.photo-block img {
-  width: 100%;
-  height: 100%; 
-  object-fit: none;
-}
-
-.home-button{
-  display: flex;
-  justify-content: center;
-  padding-bottom: 30px;
-}
-
-#load-more {
+#charger-plus{
   width: 20%;
   height: 50px;
   border-radius: 2px;
@@ -553,3 +522,33 @@ footer {
       opacity: 1;
   }
 }
+
+
+
+
+/***** Media query : max-width: 1200px ******/
+@media all and (max-width: 768px) {
+  .filtres {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bloc-filtre {
+    padding-left: 0 !important;
+  }
+
+  .zone-les-photos {
+    display: grid;
+    align-items: center;
+  }
+
+
+} 
+
+
+
+/***** Media query : max-width: 768px ******/
+
+/***** Media query : max-width: 580px ******/
+
+/***** Media query : max-width: 320px ******/

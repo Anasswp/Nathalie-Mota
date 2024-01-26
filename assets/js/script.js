@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         contactBouton = document.getElementById("contact-post");
     }
 
-    console.log('Chargement de la modale');
-
     function toggleModale() {
         console.log('Toggle Modale');
         if (modale.style.display === "block") {
