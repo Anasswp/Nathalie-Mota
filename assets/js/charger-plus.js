@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const responseData = await reponse.text();
                 zoneLesPhotos.insertAdjacentHTML('beforeend', responseData);
 
-                // Ajout d'un compte pour masquer le bouton (si moins de 8 éléments chargés)
+                // Ajout d'un compte pour masquer le bouton (si moins de 12 éléments chargés)
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(responseData, 'text/html');
                 const figureCompte = doc.querySelectorAll('figure').length;
@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 overlay();
                 lightbox();
 
-                // Si moins de 8 éléments, le bouton disparait
-                if (figureCompte < 8) {
+                // Si moins de 12 éléments, le bouton disparait
+                if (figureCompte < 12) {
                     chargerPlusBouton.style.display = 'none';
                 }
 

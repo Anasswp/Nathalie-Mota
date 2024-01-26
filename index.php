@@ -102,14 +102,7 @@ get_header();
                 if ($photo_query->have_posts()) {
                     while ($photo_query->have_posts()) {
                         $photo_query->the_post();
-                        // Récupération de l'URL du post individuel
-                        $post_permalink = get_permalink();
-                        // Affichage du lien avec la classe photo-block
-                        echo '<a href="' . esc_url($post_permalink) . '" class="photo-block">';
-                        // Inclusion du template pour la partie de la photo
                         get_template_part('templates_part/photo_block');
-                        // Fermeture du lien
-                        echo '</a>';
                     }
                     wp_reset_postdata();
                 } else {
