@@ -97,7 +97,7 @@ function charger_plus() {
     if ($photo_query->have_posts()) {
         while ($photo_query->have_posts()) {
             $photo_query->the_post();
-            get_template_part('templates_part/photo_block');
+            get_template_part('template_part/photo_block');
         }
         wp_reset_postdata();
     }

@@ -319,11 +319,12 @@ nav {
 
 /*********** Photo-block***********/
 .photo-block {
-  width: 564px;
-  height: 495px;
-  position: relative;
-  margin: 0 10px 20px;
+  width: 100%;
+  max-width: 565px;
+  height: 400px;
+  margin: 0 auto 20px;
   overflow: hidden;
+  position: relative;
   display: inline-block;
 }
 
@@ -351,6 +352,7 @@ nav {
 
 
 /*********** Photos ***********/
+
 #charger-plus{
   width: 20%;
   height: 50px;
@@ -541,14 +543,4 @@ footer {
     display: grid;
     align-items: center;
   }
-
-
 } 
-
-
-
-/***** Media query : max-width: 768px ******/
-
-/***** Media query : max-width: 580px ******/
-
-/***** Media query : max-width: 320px ******/

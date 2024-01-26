@@ -99,10 +99,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Création d'une fonction pour la gestion du bouton charger plus en cas de filtrage avant son utilisation
     function surveillerChargerPlus() {
         var nombrePhotos = zoneLesPhotos.querySelectorAll('.autres-photos').length;
-        if (nombrePhotos < 8) {
+        if (nombrePhotos < 12) {
             boutonChargerPlus.style.display = "none";
         }
-        if (nombrePhotos >= 8) {
+        if (nombrePhotos >= 12) {
             boutonChargerPlus.style.display = "block";
         }
     }
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             success: function(response) {
                 zoneLesPhotos.innerHTML = response;
-                // Si le nouveau contenu dispose de moins de 8 photos, alors le bouton charger plus disparaît
+                // Si le nouveau contenu dispose de moins de 12 photos, alors le bouton charger plus disparaît
                 surveillerChargerPlus();
                 // L'overlay de chaque photo se charge à chaque requête
                 overlay();
