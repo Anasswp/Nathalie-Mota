@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     /////////////////////////////////////////////////////////////////////////
     
-    // Overlay des photos de photo_block.php
+    // Overlay des photos de photo-bloc.php
     
     function overlay() {
         // Apparition de l'overlay au survol
