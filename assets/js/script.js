@@ -1,3 +1,33 @@
+// Gestion de la modale de contact
+document.addEventListener("DOMContentLoaded", function () { 
+    const boutonContact = document.getElementById("contact-post"); // Utilisez le bon ID pour votre bouton Contact
+    const modale = document.querySelector(".votre-classe-modale"); // Utilisez la classe correcte pour votre modale
+    const boutonFermeture = document.querySelector(".votre-classe-bouton-fermeture"); // Utilisez la classe correcte pour votre bouton de fermeture
+    const conteneurModale = document.getElementById("votre-id-conteneur-modale"); // Utilisez le bon ID pour le conteneur de la modale
+	
+    boutonContact.addEventListener("click", function() {
+        // Gestion de la fermeture de la modale - En cliquant à nouveau sur Contact
+        if (modale.style.display === "block") {
+            modale.style.display = "none";
+        } else {
+            modale.style.display = "block";
+        }
+    });
+	
+    // Fermeture de la modale lorsqu'on clic sur la croix
+    boutonFermeture.addEventListener("click", function() {
+        modale.style.display = "none";
+    });
+	
+    // Fermeture de la modale lorsqu'on clic hors de la modale - facultatif
+    window.addEventListener('click', (event) => {
+        if (event.target === conteneurModale) {
+            modale.style.display = "none";
+        }
+    });
+});
+
+
 // Flèches de navigation sur single-photo.php
 document.addEventListener("DOMContentLoaded", function () {
 

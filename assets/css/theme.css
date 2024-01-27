@@ -526,9 +526,7 @@ footer {
 }
 
 
-
-
-/***** Media query : max-width: 1200px ******/
+/***** Media query : max-width: 768px ******/
 @media all and (max-width: 768px) {
   .filtres {
     display: flex;
@@ -543,4 +541,35 @@ footer {
     display: grid;
     align-items: center;
   }
+
+  h1{
+    font-size: 50px !important;
+  }
+
 } 
+
+/* Media query : max-width: 768px */
+@media all and (max-width: 768px) {
+  .filtres {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bloc-filtre {
+    padding-left: 0 !important;
+  }
+
+  .zone-les-photos {
+    display: grid;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 50px !important;
+  }
+  
+  .logo {
+    margin-left: 80px;
+  }
+}
+
