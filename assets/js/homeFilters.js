@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const options = document.getElementById(optionsId);
         const choixPossibles = options.querySelectorAll(".menu-option");
 
-        // Ajout d'une class pour le dernier élément afin de gérer le border radius
+        // Ajout d'une classz pour le dernier élément afin de gérer le border radius
         choixPossibles[choixPossibles.length - 1].classList.add("dernier");
 
         choixPossibles.forEach(function(option, index) {
@@ -66,6 +66,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (index === choixPossibles.length - 1) {
                     option.classList.add("dernier-selectionne");
                 }
+
+                    // Fermer le menu déroulant après la sélection
+                    options.style.display = "none";
+                    menu.style.borderRadius = "8px";
+                    menu.classList.remove("menu-ouvert");
+                    fleche.classList.remove("rotation");
+                    options.classList.remove("apparition");
+                    blocCache.style.display = "none";
+                    blocVisible.style.display = "block";
             });
         });
     }
@@ -107,56 +116,65 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Détection de l'élément sélectionné dans "Catégories" et filtrage en fonction de l'ID de l'élément
-    elementsCategorie.forEach(function(element) {
-        element.addEventListener("click", function() {
-            categorieChangee = element.id;
-            miseAJourPhotos(categorieChangee, formatChange, triChange);
-        });
+// Détection de l'élément sélectionné dans "Catégories" et filtrage en fonction de l'ID de l'élément
+elementsCategorie.forEach(function(element) {
+    element.addEventListener("click", function() {
+        categorieChangee = element.id;
+        miseAJourPhotos(categorieChangee, formatChange, triChange);
+        // Fermer le menu déroulant après la sélection
+        document.getElementById("categorie-options").style.display = "none";
     });
+});
 
-    // Détection de l'élément sélectionné dans "Formats" et filtrage en fonction de l'ID de l'élément
-    elementsFormat.forEach(function(element) {
-        element.addEventListener("click", function() {
-            formatChange = element.id;
-            miseAJourPhotos(categorieChangee, formatChange, triChange);
-        });
+// Détection de l'élément sélectionné dans "Formats" et filtrage en fonction de l'ID de l'élément
+elementsFormat.forEach(function(element) {
+    element.addEventListener("click", function() {
+        formatChange = element.id;
+        miseAJourPhotos(categorieChangee, formatChange, triChange);
+        // Fermer le menu déroulant après la sélection
+        document.getElementById("format-options").style.display = "none";
     });
+});
 
-    // Détection de l'élément sélectionné dans "Trier par" et filtrage en fonction de l'ID de l'élément
-    elementsTri.forEach(function(element) {
-        element.addEventListener("click", function() {
-            triChange = element.id;
-            miseAJourPhotos(categorieChangee, formatChange, triChange);
-        });
+// Détection de l'élément sélectionné dans "Trier par" et filtrage en fonction de l'ID de l'élément
+elementsTri.forEach(function(element) {
+    element.addEventListener("click", function() {
+        triChange = element.id;
+        miseAJourPhotos(categorieChangee, formatChange, triChange);
+        // Fermer le menu déroulant après la sélection
+        document.getElementById("tri-options").style.display = "none";
     });
+});
 
-    // Fonction de mise à jour des photos
-    function miseAJourPhotos(category, format, order) {
-        // Envoyer une requête AJAX pour récupérer les photos filtrées
-        jQuery.ajax({
-            url: myAjax.ajaxurl,
-            type: 'POST',
-            data: {
-                action: 'filtrer_photos',
-                category: category,
-                format: format,
-                order: order,
-                // Ajout du nonce de sécurité
-                nonce: myAjax.nonce
-            },
-            success: function(response) {
-                zoneLesPhotos.innerHTML = response;
-                // Si le nouveau contenu dispose de moins de 12 photos, alors le bouton charger plus disparaît
-                surveillerChargerPlus();
-                // L'overlay de chaque photo se charge à chaque requête
-                overlay();
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
-    }
+// Fonction de mise à jour des photos
+function miseAJourPhotos(category, format, order, titreAModifier) {
+    // Envoyer une requête AJAX pour récupérer les photos filtrées
+    jQuery.ajax({
+        url: myAjax.ajaxurl,
+        type: 'POST',
+        data: {
+            action: 'filtrer_photos',
+            category: category,
+            format: format,
+            order: order,
+            // Ajout du nonce de sécurité
+            nonce: myAjax.nonce
+        },
+        success: function(response) {
+            zoneLesPhotos.innerHTML = response;
+            // Si le nouveau contenu dispose de moins de 12 photos, alors le bouton charger plus disparaît
+            surveillerChargerPlus();
+            // L'overlay de chaque photo se charge à chaque requête
+            overlay();
+            
+            // Mettre à jour le titre du bouton avec le filtre sélectionné
+            titreAModifier.textContent = category;  // Assurez-vous d'ajuster cela selon vos besoins
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+}
 
     ////////////////////////////////////////////////////////////////////
 

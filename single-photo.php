@@ -1,31 +1,26 @@
 <?php
-get_header();
+	get_header();
 
-// Récupération de l'identifiant de la photo (nom) dans l'URL //
+// Récupération de l'identifiant de la photo (nom) dans l'URL
 $slug = get_query_var('photographies');
 
-// Construction des critères de recherche //
+// Construction des critères de recherche
 $args = [
     'post_type' => 'photographies',
     'name' => $slug,
     'posts_per_page' => 1
 ];
 
+// Requête auprès de la base de données wordpress pour récupérer la photo correspondante
 $custom_query = new WP_Query($args);
 
 if ($custom_query->have_posts()) :
     while ($custom_query->have_posts()) : $custom_query->the_post();
 
-        $reference = get_field('reference');
-        $type = get_field('type');
-        $categories = wp_get_post_terms(get_the_ID(), 'categorie');
-        $formats = wp_get_post_terms(get_the_ID(), 'formats');
-
-    endwhile; // Fermeture de la boucle while //
-    wp_reset_postdata(); // Réinitialisation des données du post //
-
-endif; // Fermeture de la condition if //
-
+	$reference = get_field('reference');
+	$type = get_field('type');
+	$categories = wp_get_post_terms(get_the_ID(), 'categorie');
+	$formats = wp_get_post_terms(get_the_ID(), 'formats');
  ?>
 
 <div class="single-post">
@@ -55,6 +50,12 @@ endif; // Fermeture de la condition if //
         </div>
     </div>
 </div>
+
+<?php
+    endwhile;
+    wp_reset_postdata();
+endif;
+?>
 
 <!-- Ajout du bandeau d'interactions inférieur -->
 <div class="banner">
@@ -87,10 +88,10 @@ endif; // Fermeture de la condition if //
          
             <div class="previous-post">
                 <div class="fleche-container">
-                    <!-- Récupération du post précédent par date -->
+                    <!-- Récupération du post suivant par date de publication ASC  -->
                     <?php
                     $previous_post = get_previous_post();
-                    // Si le post précédent existe, affichage du post
+                    // Si le post précédent existe, affichage du post suivant
                     if (!empty($previous_post)) :
                     ?>
                         <img class="previous-post-image" src="<?php echo get_the_post_thumbnail_url($previous_post->ID); ?>" alt="Image précédente">
@@ -178,7 +179,6 @@ if( have_posts() ) : while( have_posts() ) : the_post(); ?>
                 }
             ?>
         </div>
-       
     </div>
 </div>
 
