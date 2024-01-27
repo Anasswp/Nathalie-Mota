@@ -6,16 +6,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const referenceCopy = document.getElementById("single-reference");
     const modalReference = document.querySelector("#modal-reference input");
 
+    let copyReference = false; // Variable pour vérifier si la référence doit être copiée
+
     // Fonction pour afficher ou masquer la modale et l'overlay
     function toggleModale() {
         if (modale.style.display === "flex") {
             modale.style.display = "none";
             overlay.style.display = "none";
+            // Efface la référence dans le champ de la modale
+            modalReference.value = "";
+            copyReference = false; // Réinitialiser la variable
         } else {
             modale.style.display = "flex";
             overlay.style.display = "block";
-            // Copier la référence dans le champ de la modale
-            modalReference.value = referenceCopy.textContent;
+            // Copie la référence dans le champ de la modale seulement si copyReference est vrai
+            if (copyReference) {
+                modalReference.value = referenceCopy.textContent;
+                copyReference = false; // Réinitialise la variable après avoir copié la référence
+            }
         }
     }
 
@@ -28,13 +36,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Gestionnaire d'événements pour le bouton "contact-post"
     boutonContactPost.addEventListener("click", function (event) {
         event.stopPropagation();
+        // Défini copyReference à vrai avant d'ouvrir la modale
+        copyReference = true;
         toggleModale();
     });
 
     // Gestionnaire d'événements sur la fenêtre (lorsqu'on clique n'importe où sur la page)
     document.addEventListener('click', (event) => {
         if (!modale.contains(event.target) && event.target !== boutonContact && event.target !== boutonContactPost) {
-            // Cacher la modale uniquement si elle est affichée
+            // Cache la modale uniquement si elle est affichée
             if (modale.style.display === "flex") {
                 toggleModale();
             }
