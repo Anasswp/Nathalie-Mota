@@ -40,15 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
-
-    const nav = document.querySelector("nav");
-    const contactBouton = document.getElementById("contact-post");
-
-    contactBouton.addEventListener("click", function (event) {
-        event.stopPropagation();
-        nav.classList.add("active");
-    });
 });
+
+
+  /////////////////////////////////////////////////////////////////////////
 
 
 // Flèches de navigation sur single-photo.php
@@ -84,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     /////////////////////////////////////////////////////////////////////////
     
-    // Overlay des photos de photo-bloc.php
+    // Overlay des photos de photo_block.php
     
     function overlay() {
         // Apparition de l'overlay au survol

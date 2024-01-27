@@ -28,7 +28,6 @@
         }
 ?>
 
-<!-- Affichage du bloc photo -->
 <div class="photo-block">
     <?php echo $photo_post; ?>
     <div class="photo-details">
@@ -36,12 +35,14 @@
             <div class="icon expand-icon">
                 <i class="fa-solid fa-expand full-screen"></i>
             </div>
-            <div class="icon eye-icon">
+            <div class="icon eye-icon autres-photos">
                 <i class="fa-regular fa-eye oeil"></i>
+                <!-- Ajoutez ici d'autres éléments si nécessaire -->
             </div>
             <div class="icon third-icon">
                 <!-- Ajoutez ici le code pour la troisième icône ou laissez vide si vous ne l'utilisez pas -->
             </div>
         </div>
     </div>
+    <!-- Ajoutez ici d'autres blocs photo si nécessaire -->
 </div>
