@@ -161,7 +161,6 @@ nav {
 
 
 
-
 /***********Hero************/
 .hero-area .hero-thumbnail {
   position: relative;
@@ -205,8 +204,7 @@ nav {
 .filtres {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
   margin: 60px 0 30px 0;
   gap: 30px;
 }
@@ -350,6 +348,20 @@ nav {
 }
 
 /*********** Photos ***********/
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto 20px;
+  /* gap: 20px; */
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+
+.bouton-accueil {
+  display: flex;
+  justify-content: center;
+}
 
 #charger-plus{
   width: 20%;
@@ -524,11 +536,26 @@ footer {
 }
 
 
+/***** Media query : max-width: 1024px ******/
+@media all and (max-width: 1024px){
+  #filtre-tri {
+    padding-left: 0;
+  }
+}
+
+
 /***** Media query : max-width: 768px ******/
 @media all and (max-width: 768px) {
+  .logo {
+    margin-left: 80px;
+  }
+
   .filtres {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+   
   }
 
   .bloc-filtre {
@@ -543,31 +570,6 @@ footer {
   h1{
     font-size: 50px !important;
   }
-
 } 
 
-/* Media query : max-width: 768px */
-@media all and (max-width: 768px) {
-  .filtres {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .bloc-filtre {
-    padding-left: 0 !important;
-  }
-
-  .zone-les-photos {
-    display: grid;
-    align-items: center;
-  }
-
-  h1 {
-    font-size: 50px !important;
-  }
-  
-  .logo {
-    margin-left: 80px;
-  }
-}
 

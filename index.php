@@ -85,7 +85,7 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="affichage-des-photos">
+        <div class="affichage-des-photos container flexrow">
             <div class="zone-les-photos">
                 <!-- Création d'une loop pour afficher toutes les photos -->
                 <?php
@@ -110,9 +110,9 @@ get_header();
                 }
                 ?>
             </div>
-        </div>
-        <div class="bouton-accueil">
-            <button id="charger-plus" class="voir-plus">Charger plus</button>
+            <div class="bouton-accueil">
+                <button id="charger-plus" class="voir-plus">Charger plus</button>
+            </div>
         </div>
     </div>
 
