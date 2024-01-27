@@ -321,7 +321,7 @@ nav {
 .photo-block {
   width: 100%;
   max-width: 565px;
-  height: 400px;
+  height: 495px;
   margin: 0 auto 20px;
   overflow: hidden;
   position: relative;
@@ -348,8 +348,6 @@ nav {
   font-size: 18px;
   cursor: pointer;
 }
-
-
 
 /*********** Photos ***********/
 

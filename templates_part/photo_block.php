@@ -2,12 +2,12 @@
     // Récupération des informations de la photo
     $titre_post = get_the_title();
     $titre_nettoye = sanitize_title($titre_post);
-    $lien_post = get_template_directory_uri() . '/photographies/'. $titre_nettoye;
+    $lien_post = '/photographies/'. $titre_nettoye;
     $photo_post = get_the_content();
     $date_post = get_the_date('Y');
     $reference_photo = get_field('reference');
 
-    // Récupération du format de la photo
+    // Récupération du format de la photo et stockage pour filtrage
     $formats = get_the_terms(get_the_ID(), 'formats');
         if ($formats && !is_wp_error($formats)) {
             $noms_formats = array();
@@ -17,7 +17,7 @@
             $liste_formats = join(', ', $noms_formats);
         }
 
-    // Récupération de la catégorie de la photo
+    // Récupération de la catégorie de la photo et stockage pour filtrage
     $categories = get_the_terms(get_the_ID(), 'categorie');
         if ($categories && !is_wp_error($categories)) {
             $noms_categories = array();
@@ -29,20 +29,23 @@
 ?>
 
 <div class="photo-block">
-    <?php echo $photo_post; ?>
     <div class="photo-details">
-        <div class="icons-container">
-            <div class="icon expand-icon">
-                <i class="fa-solid fa-expand full-screen"></i>
+        <?php echo $lien_post; ?>
+    </div>
+    <?php echo $photo_post; ?>
+    <div class="icons-container">
+        <div class="icon expand-icon">
+            <i class="fa-solid fa-expand full-screen" style="color: #ffffff;"></i>
+        </div>
+        <div class="icon eye-icon autres-photos">
+            <i class="fa-regular fa-eye oeil" style="color: #ffffff;"></i>
+        </div>
+        <div class="icon third-icon">
+            <div class="reference-photo">
+                <?php echo $reference_photo; ?>
             </div>
-            <div class="icon eye-icon autres-photos">
-                <i class="fa-regular fa-eye oeil"></i>
-                <!-- Ajoutez ici d'autres éléments si nécessaire -->
-            </div>
-            <div class="icon third-icon">
-                <!-- Ajoutez ici le code pour la troisième icône ou laissez vide si vous ne l'utilisez pas -->
-            </div>
+            <?php echo $liste_categories; ?>
         </div>
     </div>
-    <!-- Ajoutez ici d'autres blocs photo si nécessaire -->
 </div>
+
