@@ -3,20 +3,17 @@
 }
 
 .single-post {
+  width: 100%;
+  max-width: 1190px;
+  margin: auto;
+  padding: 30px 20px 0;
+  font-family: 'Space Mono', monospace;
   display: flex;
   justify-content: space-between;
   position: relative;
-  padding: 0 100px 0 120px;
-}
-
-.single-post::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 39%;
-  width: 52%;
   border-bottom: 1px solid black;
 }
+
 
 .single-info {
   text-transform: uppercase;
@@ -46,7 +43,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0;
+  width: 100%;
+  max-width: 1420px;
+  margin: auto;
+  padding: 30px 20px 30px;
+  font-family: 'Space Mono', monospace;
 }
 
 .banner-button {
@@ -67,36 +68,36 @@
   height: 60px;
   cursor: pointer;
   object-fit: cover;
-}
-
-.previous-post,
-.next-post {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-right: 5px;
 }
 
 .array-post {
   display: flex;
-  
+}
+
+.fleche-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  margin-right: 5px;
 }
 
 
 /**Similar photos**/
-.similar-photo{
+.similar-photo {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
   border-top: 1px black solid;
   padding-bottom: 70px;
 }
 
-.similar-photo, button{
-  font-family: "Space Mono", monospace;
-}
-
-h3{
+h3 {
   font-family: "Space Mono", monospace;
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  margin-top: 20px;
 }
-

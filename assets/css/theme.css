@@ -12,11 +12,13 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 1400px;
+  margin: auto; 
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.031372549);
 }
 
 nav {
-  margin-right: 130px;
+  margin-right: 100px;
 }
 
 .logo {
@@ -143,20 +145,6 @@ nav {
   width: 263px;
   height: 50px;
   border: 1px solid #B8BBC2;
-}
-
-
-/***********Photo_block************/
-.block-content{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  object-fit: none;
-}
-
-.wp-image{
-  width: 564px;
-  height: 495px;
 }
 
 
@@ -316,14 +304,23 @@ nav {
 }
 
 /*********** Photo-block***********/
+.wp-block-image img {
+  width: 550px;
+  height: 550px;
+  box-sizing: border-box;
+  /* height: auto; */
+  max-width: 100%;
+  object-fit: cover;
+  
+}
+
+
 .photo-block {
-  width: 100%;
-  max-width: 565px;
+  width: 564px;
   height: 495px;
-  margin: 0 auto 20px;
-  overflow: hidden;
   position: relative;
   display: inline-block;
+  overflow: hidden;
 }
 
 .photo-details {
@@ -337,6 +334,16 @@ nav {
   box-sizing: border-box;
 }
 
+.photo-content {
+  height: 100%;
+}
+
+.photo-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garantit que l'image conserve son aspect tout en remplissant le conteneur */
+}
+
 .icons-container {
   display: flex;
   justify-content: space-between;
@@ -346,6 +353,7 @@ nav {
   font-size: 18px;
   cursor: pointer;
 }
+
 
 /*********** Photos ***********/
 .container {
@@ -550,6 +558,25 @@ footer {
     margin-left: 80px;
   }
 
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav {
+    margin-right: 0;
+  }
+
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .single-image {
+    width: 200px;
+    height: 200px;
+  }
+
   .filtres {
     display: flex;
     flex-direction: column;
@@ -565,11 +592,10 @@ footer {
   .zone-les-photos {
     display: grid;
     align-items: center;
+    justify-items: center;
   }
 
   h1{
     font-size: 50px !important;
   }
 } 
-
-
