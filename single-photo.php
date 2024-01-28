@@ -174,6 +174,7 @@ if( have_posts() ) : while( have_posts() ) : the_post(); ?>
                         }
                         wp_reset_postdata();
                     } else {
+                        // Affichage d'un message si aucune photo similaire n'est trouvée dans la même catégorie
                         echo "Aucune photo similaire pour le moment.";
                     }
                 }

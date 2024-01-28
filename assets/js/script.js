@@ -53,6 +53,28 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Fonction pour rediriger vers la page du post lorsqu'on clique sur une image
+    function redirectToPost(url) {
+        window.location.href = url;
+    }
+
+    // Gestionnaire d'événements pour chaque élément avec la classe "photo-block"
+    const photoBlocks = document.querySelectorAll('.photo-block');
+
+    photoBlocks.forEach(photoBlock => {
+        photoBlock.addEventListener('click', function (event) {
+            // Assurez-vous que le clic provient de l'image et non des enfants (icônes, etc.)
+            if (event.target.tagName.toLowerCase() !== 'i') {
+                const postLink = this.querySelector('a').getAttribute('href');
+                redirectToPost(postLink);
+            }
+        });
+    });
+});
+
+
+
   /////////////////////////////////////////////////////////////////////////
 
 
@@ -93,19 +115,19 @@ document.addEventListener("DOMContentLoaded", function () {
     
     function overlay() {
         // Apparition de l'overlay au survol
-        const autresPhotos = document.querySelectorAll('.autres-photos');
+        const autresPhotos = document.querySelectorAll('.photo-block');
     
         autresPhotos.forEach(element => {
             const overlay = element.querySelector('.survol-photo');
             const oeil = element.querySelector('.oeil');
-            const divLienPhoto = element.querySelector('.lien-photo');
-            const lienPhoto = divLienPhoto.innerHTML;
-    
+            const divLienPhoto = element.querySelector('.photo-details');
+            const lienPhoto = divLienPhoto.textContent.trim();  // Utilisez textContent pour récupérer le texte
     
             // Début du survol
             element.addEventListener('mouseenter', function() {
                 overlay.style.display = 'block';
             });
+    
             // Fin du survol
             element.addEventListener('mouseleave', function() {
                 overlay.style.display = 'none';
@@ -122,3 +144,4 @@ document.addEventListener("DOMContentLoaded", function () {
     
         lightbox();
     }
+    

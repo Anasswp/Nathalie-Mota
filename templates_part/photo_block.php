@@ -29,23 +29,23 @@
 ?>
 
 <div class="photo-block">
-    <div class="photo-details">
-        <?php echo $lien_post; ?>
-    </div>
-    <?php echo $photo_post; ?>
-    <div class="icons-container">
-        <div class="icon expand-icon">
-            <i class="fa-solid fa-expand full-screen" style="color: #ffffff;"></i>
+    <!--Ajout d'une balise pour rendre chaque photo_block cliquable-->
+    <a href="<?php echo esc_url(get_permalink()); ?>">
+        <div class="photo-details">
+            <?php echo $titre_post; ?>
         </div>
-        <div class="icon eye-icon autres-photos">
-            <i class="fa-regular fa-eye oeil" style="color: #ffffff;"></i>
-        </div>
-        <div class="icon third-icon">
-            <div class="reference-photo">
-                <?php echo $reference_photo; ?>
+        <?php echo $photo_post; ?>
+        <div class="icons-container">
+            <div class="icon expand-icon">
+                <i class="fa-solid fa-expand full-screen" style="color: #ffffff;"></i>
             </div>
-            <?php echo $liste_categories; ?>
+            <div class="icon eye-icon autres-photos">
+                <i class="fa-regular fa-eye oeil" style="color: #ffffff;"></i>
+            </div>
+            <div class="icon third-icon">
+                <?php echo $liste_categories; ?>
+            </div>
         </div>
-    </div>
+    </a>
 </div>
 
