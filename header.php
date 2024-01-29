@@ -11,21 +11,28 @@
 
 <body>
 
-    <header>
-        <div class="logo">
-            <?php the_custom_logo() ?>
+<header>
+    <div class="logo">
+        <?php the_custom_logo() ?>
+    </div>
+    <nav>
+        <?php 
+        wp_nav_menu(array(
+            'theme_location' => 'main-menu',
+            'container' => false,
+            'menu_class' => 'menu',
+        ));
+        ?>
+    </nav>
+    <div class="burger-menu">
+        <div class="burger-icon" id="burger-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
-        <nav>
-            <?php 
-            wp_nav_menu(array(
-                'theme_location' => 'main-menu',
-                'container' => false,
-                'menu_class' => 'menu',
-            ));
-            ?>
-        </nav>
+    </div>
+</header>
 
-    </header>
 
         <?php 
         /*On appelle la modale dans notre header*/

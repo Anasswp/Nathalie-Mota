@@ -544,18 +544,15 @@ footer {
 }
 
 
-/***** Media query : max-width: 1024px ******/
-@media all and (max-width: 1024px){
-  #filtre-tri {
-    padding-left: 0;
-  }
+.burger-menu {
+  display: none; /* Masquer le menu burger par défaut */
 }
 
 
-/***** Media query : max-width: 768px ******/
-@media all and (max-width: 768px) {
+/***** Media query : max-width: 1024px ******/
+@media all and (max-width: 1024px) {
   .logo {
-    margin-left: 80px;
+    margin-left: 15px;
   }
 
   header {
@@ -577,12 +574,15 @@ footer {
     height: 200px;
   }
 
+  #filtre-tri {
+    padding-left: 0;
+  }
+
   .filtres {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
-   
   }
 
   .bloc-filtre {
@@ -595,7 +595,81 @@ footer {
     justify-items: center;
   }
 
-  h1{
+  h1 {
     font-size: 50px !important;
   }
-} 
+}
+
+
+
+ 
+@media only screen and (max-width: 767px) {
+  .burger-menu {
+      display: block; /* Afficher le menu burger pour les écrans de taille maximale de 767 pixels */
+  }
+
+  nav {
+      display: none; /* Masquer le menu de navigation principal pour les écrans mobiles par défaut */
+  }
+
+  nav.active {
+      display: block; /* Afficher le menu de navigation lorsque le menu burger est activé */
+  }
+
+  .burger-icon {
+      cursor: pointer;
+      padding: 10px;
+  }
+
+  .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 5px 0;
+      transition: 0.4s;
+  }
+
+  /* Styles pour l'icône burger active */
+  .burger-icon.active .bar:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .burger-icon.active .bar:nth-child(2) {
+      opacity: 0;
+  }
+
+  .burger-icon.active .bar:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  /* Styles pour le menu mobile */
+  .menu-options {
+      display: none;
+      position: absolute;
+      flex-direction: column;
+      width: 260px;
+      border: 1px solid #ccc;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      background-color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 12px;
+      line-height: 18px;
+      justify-content: flex-start;
+      align-items: center;
+      z-index: 75;
+  }
+
+  .menu-option {
+      height: 45px;
+      padding-left: 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+  }
+
+  /* Ajoutez d'autres styles pour le menu mobile selon vos besoins */
+}

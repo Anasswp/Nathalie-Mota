@@ -144,4 +144,19 @@ document.addEventListener("DOMContentLoaded", function () {
     
         lightbox();
     }
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the burger icon and menu
+        const burgerIcon = document.getElementById('burger-icon');
+        const navMenu = document.querySelector('nav');
+    
+        // Add click event listener to the burger icon
+        burgerIcon.addEventListener('click', function () {
+            // Toggle the 'active' class on both the burger icon and the menu
+            burgerIcon.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    });
     
