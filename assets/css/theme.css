@@ -604,6 +604,12 @@ footer {
 
  
 @media only screen and (max-width: 767px) {
+  .single-post{
+    display: flex;
+    flex-direction: column;
+  }
+
+
   .burger-menu {
       display: block; /* Afficher le menu burger pour les écrans de taille maximale de 767 pixels */
   }
@@ -644,32 +650,30 @@ footer {
 
   /* Styles pour le menu mobile */
   .menu-options {
-      display: none;
-      position: absolute;
-      flex-direction: column;
-      width: 260px;
-      border: 1px solid #ccc;
-      border-top: none;
-      border-radius: 0 0 8px 8px;
-      background-color: #fff;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 500;
-      font-style: normal;
-      font-size: 12px;
-      line-height: 18px;
-      justify-content: flex-start;
-      align-items: center;
-      z-index: 75;
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    width: 260px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 18px;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 75;
   }
 
   .menu-option {
-      height: 45px;
-      padding-left: 10px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      cursor: pointer;
+    height: 45px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
   }
-
-  /* Ajoutez d'autres styles pour le menu mobile selon vos besoins */
 }
