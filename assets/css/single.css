@@ -1,16 +1,15 @@
 .single-container{
+  width: 50%;
   padding-top: 8%;
 }
 
 .single-post {
-  width: 100%;
   max-width: 1190px;
   margin: auto;
   padding: 30px 20px 0;
   font-family: 'Space Mono', monospace;
   display: flex;
   justify-content: space-between;
-  position: relative;
   border-bottom: 1px solid black;
 }
 
@@ -29,8 +28,13 @@
 }
 
 .single-image {
-  max-width: 100%;
+  width: 50%;
   height: auto;
+}
+
+.single-content {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .single-content img {

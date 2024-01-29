@@ -12,7 +12,7 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1400px;
+  
   margin: auto; 
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.031372549);
 }
@@ -23,7 +23,7 @@ nav {
 
 .logo {
   margin-left: 130px;
-  max-width: 250px;
+  
 }
 
 /*********** Menu ***********/
@@ -358,7 +358,7 @@ nav {
 /*********** Photos ***********/
 .container {
   width: 100%;
-  max-width: 1440px;
+  
   margin: 0 auto 20px;
   /* gap: 20px; */
   flex-wrap: wrap;
@@ -555,11 +555,6 @@ footer {
     margin-left: 15px;
   }
 
-  header {
-    display: flex;
-    flex-direction: column;
-  }
-
   nav {
     margin-right: 0;
   }
@@ -570,8 +565,8 @@ footer {
   }
 
   .single-image {
-    width: 200px;
-    height: 200px;
+    width: 500px;
+    height: 500px;
   }
 
   #filtre-tri {
@@ -609,6 +604,9 @@ footer {
     flex-direction: column;
   }
 
+  .banner-content {
+    padding: 0;
+  }
 
   .burger-menu {
       display: block; /* Afficher le menu burger pour les écrans de taille maximale de 767 pixels */
