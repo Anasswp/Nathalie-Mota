@@ -304,17 +304,6 @@ nav {
 }
 
 /*********** Photo-block***********/
-.wp-block-image img {
-  width: 550px;
-  height: 550px;
-  box-sizing: border-box;
-  /* height: auto; */
-  max-width: 100%;
-  object-fit: cover;
-  
-}
-
-
 .photo-block {
   width: 564px;
   height: 495px;
