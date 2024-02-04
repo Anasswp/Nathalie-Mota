@@ -3,28 +3,27 @@ get_header();
 ?>
 
 <div class="hero-area">
-        <h1 class="hero-title">Photographe Event</h1>
-        <div class="hero-thumbnail">
-            <?php
-            // Affichage aléatoire d'une photo
-            $args = array(
-                'post_type' => 'photographies',
-                'posts_per_page' => 1,
-                'orderby' => 'rand',
-            );
+    <h1 class="hero-title">Photographe Event</h1>
+    <div class="hero-thumbnail">
+        <?php
+        // Affichage aléatoire d'une photo
+        $args = array(
+            'post_type' => 'photographies',
+            'posts_per_page' => 1,
+            'orderby' => 'rand',
+        );
 
-            $photo_aleatoire_hero = new WP_Query($args);
-
-            if ($photo_aleatoire_hero->have_posts()) {
-                while ($photo_aleatoire_hero->have_posts()) {
-                    $photo_aleatoire_hero->the_post();
-                    the_content();
-                }
-                wp_reset_postdata();
+        $photo_aleatoire_hero = new WP_Query($args);
+        if ($photo_aleatoire_hero->have_posts()) {
+            while ($photo_aleatoire_hero->have_posts()) {
+                $photo_aleatoire_hero->the_post();
+                the_content();
             }
-            ?>
-        </div>
+            wp_reset_postdata();
+        }
+        ?>
     </div>
+
     <div class="bloc-les-photos">
         <div class="filtres">
             <div class="bloc-filtre">
@@ -85,7 +84,7 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="affichage-des-photos container flexrow">
+        <div class="affichage-des-photos">
             <div class="zone-les-photos">
                 <!-- Création d'une loop pour afficher toutes les photos -->
                 <?php
@@ -115,7 +114,7 @@ get_header();
             </div>
         </div>
     </div>
-
+</div>
 <?php
 get_footer();
 ?>
