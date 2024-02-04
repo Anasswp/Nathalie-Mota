@@ -28,6 +28,7 @@
         }
 ?>
 
+<!-- Affichage du bloc photo -->
 <div class="photo-block">
     <!--Ajout d'une balise pour rendre chaque photo_block cliquable-->
     <a href="<?php echo esc_url(get_permalink()); ?>">
@@ -42,7 +43,7 @@
             <div class="icon eye-icon autres-photos">
                 <i class="fa-regular fa-eye oeil" style="color: #ffffff;"></i>
             </div>
-            <div class="icon third-icon">
+            <div class="icon third-icon survol-categorie">
                 <?php echo $liste_categories; ?>
             </div>
         </div>

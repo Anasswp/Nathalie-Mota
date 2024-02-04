@@ -34,12 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Gestionnaire d'événements pour le bouton "contact-post"
-    boutonContactPost.addEventListener("click", function (event) {
-        event.stopPropagation();
-        // Défini copyReference à vrai avant d'ouvrir la modale
-        copyReference = true;
-        toggleModale();
-    });
+    let urlActuelle = window.location.href;
+    if (urlActuelle.match(/photographies/)) {
+        boutonContactPost.addEventListener("click", function (event) {
+            event.stopPropagation();
+            // Défini copyReference à vrai avant d'ouvrir la modale
+            copyReference = true;
+            toggleModale();
+        });
+    }
 
     // Gestionnaire d'événements sur la fenêtre (lorsqu'on clique n'importe où sur la page)
     document.addEventListener('click', (event) => {
@@ -118,7 +121,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const autresPhotos = document.querySelectorAll('.photo-block');
     
         autresPhotos.forEach(element => {
-            const overlay = element.querySelector('.survol-photo');
+            const overlay = element.querySelector('.icons-container');
+            const lightbox = document.querySelector('.lightbox');
             const oeil = element.querySelector('.oeil');
             const divLienPhoto = element.querySelector('.photo-details');
             const lienPhoto = divLienPhoto.textContent.trim();  // Utilisez textContent pour récupérer le texte
@@ -126,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Début du survol
             element.addEventListener('mouseenter', function() {
                 overlay.style.display = 'block';
+                //lightbox.style.display = 'block';
             });
     
             // Fin du survol
@@ -147,6 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+    /////////////////////////////////////////////////////////////////////////
+    
     document.addEventListener('DOMContentLoaded', function () {
         // Get the burger icon and menu
         const burgerIcon = document.getElementById('burger-icon');

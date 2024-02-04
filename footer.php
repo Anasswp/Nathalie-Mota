@@ -9,7 +9,7 @@
         ));
         ?>
     </div>
-    <div class="lightbox">
+    <div class="lightbox" id="black-screen">
         <div class="lightbox-fermeture">
             <i class="fa-solid fa-xmark" style="color: #ffffff;"></i>
         </div>

@@ -1,5 +1,5 @@
 function lightbox() {
-    const recuperationPhotos = document.querySelectorAll('.autres-photos');
+    const recuperationPhotos = document.querySelectorAll('.photo-block');
     const lightbox = document.querySelector('.lightbox');
     const zonePhotoLightBox = lightbox.querySelector('.lightbox-affichage img');
     const zoneReference = lightbox.querySelector('.reference-photo');
@@ -17,13 +17,11 @@ function lightbox() {
         const laPhoto = element.querySelector('img');
         const hauteurLaPhoto = laPhoto.naturalHeight;
         const largeurLaPhoto = laPhoto.naturalWidth;
-        const reference = element.querySelector('.survol-reference');
         const categorie = element.querySelector('.survol-categorie');
         return {
             src: laPhoto.src,
             width: largeurLaPhoto,
             height: hauteurLaPhoto,
-            reference: reference.textContent,
             categorie: categorie.textContent,
         };
     });
@@ -39,7 +37,7 @@ function lightbox() {
             // Apparition de la lightbox et configuration de l'index sélectionné
             lightbox.style.display = "flex";
             indexPhoto = index;
-
+        
             // Chargement des informations de la photo associée à l'index sélectionné
             const infoPhotoActuelle = tableauPhotos[indexPhoto];
             zonePhotoLightBox.src = infoPhotoActuelle.src;
@@ -47,7 +45,11 @@ function lightbox() {
             zonePhotoLightBox.style.height = infoPhotoActuelle.height + 'px';
             zoneReference.textContent = infoPhotoActuelle.reference;
             zoneCategorie.textContent = infoPhotoActuelle.categorie;
+        
+            // Appel de la fonction lightbox() pour configurer les autres gestionnaires d'événements
+            lightbox();
         });
+        
     });
 
     ////////////////////////////////////////////////////////////////////

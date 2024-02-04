@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Création d'une fonction pour la gestion du bouton charger plus en cas de filtrage avant son utilisation
     function surveillerChargerPlus() {
-        var nombrePhotos = zoneLesPhotos.querySelectorAll('.autres-photos').length;
+        var nombrePhotos = zoneLesPhotos.querySelectorAll('.photo-block').length;
         if (nombrePhotos < 12) {
             boutonChargerPlus.style.display = "none";
         }
@@ -171,7 +171,6 @@ function miseAJourPhotos(category, format, order, titreAModifier) {
             titreAModifier.textContent = category;  // Assurez-vous d'ajuster cela selon vos besoins
         },
         error: function(error) {
-            console.log(error);
         }
     });
 }
