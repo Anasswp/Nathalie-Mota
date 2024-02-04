@@ -23,8 +23,8 @@ get_header();
         }
         ?>
     </div>
-
-    <div class="bloc-les-photos">
+</div>
+<div class="bloc-les-photos">
         <div class="filtres">
             <div class="bloc-filtre">
                 <!-- Création du menu déroulant Catégories -->
@@ -90,7 +90,7 @@ get_header();
                 <?php
                 $args = array(
                     'post_type' => 'photographies',
-                    'posts_per_page' => 8,
+                    'posts_per_page' => 12,
                     'orderby' => 'date',
                     'order' => 'ASC',
                     'paged' => 1,
@@ -109,12 +109,12 @@ get_header();
                 }
                 ?>
             </div>
-            <div class="bouton-accueil">
-                <button id="charger-plus" class="voir-plus">Charger plus</button>
-            </div>
+        </div>
+        <div class="bouton-accueil">
+            <button id="charger-plus" class="voir-plus">Charger plus</button>
         </div>
     </div>
-</div>
+
 <?php
 get_footer();
 ?>
