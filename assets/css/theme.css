@@ -319,7 +319,6 @@ nav {
 }
 
 /*********** Photo-block***********/
-.affichage-des-photos,
 .zone-les-photos {
   max-width: 1440px;
   display: flex;
@@ -382,6 +381,7 @@ nav {
 .bouton-accueil {
   display: flex;
   justify-content: center;
+  padding: 50px 0 50px 0;
 }
 
 #charger-plus{

@@ -3,7 +3,7 @@
 // Chargement des styles et des scripts
 function theme_enqueue_styles_scripts()
 {
-    wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), null, true);
+    wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/script.js');
     wp_enqueue_script('script-pagination', get_template_directory_uri() . '/assets/js/charger-plus.js');
     wp_localize_script('script-pagination', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php'), 'nonce'   => wp_create_nonce('ajax-nonce'),));
     wp_enqueue_script('script-filtres', get_template_directory_uri() . '/assets/js/homeFilters.js');
