@@ -56,6 +56,9 @@ function ajouter_id_bouton_contact($atts, $item, $args, $depth) {
 
 add_filter('nav_menu_link_attributes', 'ajouter_id_bouton_contact', 10, 4);
 
+
+
+
 // Ouverture du type de contenu personnalisé "photographies" avec single-photo.php
 function custom_single_template($single) {
     global $post;
@@ -66,6 +69,10 @@ function custom_single_template($single) {
 }
 add_filter('single_template', 'custom_single_template');
 
+
+
+
+
 // Fonction AJAX pour le chargement de plus d'éléments
 function charger_plus() {
     check_ajax_referer('ajax-nonce', 'nonce');
@@ -73,7 +80,7 @@ function charger_plus() {
     $ordreTriage = $_POST['order'];
     $args = array(
         'post_type' => 'photographies',
-        'posts_per_page' => 8,
+        'posts_per_page' => 12,
         'orderby' => 'date',
         'order' => $ordreTriage,
         'paged' => $page,
@@ -91,6 +98,9 @@ function charger_plus() {
 
 add_action('wp_ajax_charger_plus', 'charger_plus');
 add_action('wp_ajax_nopriv_charger_plus', 'charger_plus');
+
+
+
 
 // Fonction AJAX pour récupérer les photos filtrées
 function filtrer_photos() {
@@ -123,7 +133,7 @@ function filtrer_photos() {
 
     $args = array(
         'post_type' => 'photographies',
-        'posts_per_page' => 8,
+        'posts_per_page' => 12,
         'orderby' => 'date',
         'order' => $order,
         'paged' => 1,
@@ -157,4 +167,3 @@ function filtrer_photos() {
 
 add_action('wp_ajax_filtrer_photos', 'filtrer_photos');
 add_action('wp_ajax_nopriv_filtrer_photos', 'filtrer_photos');
-?>

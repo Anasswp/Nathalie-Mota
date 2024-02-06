@@ -1,3 +1,21 @@
+// Gestion du menu burger //
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the burger icon and menu
+        const burgerIcon = document.getElementById('burger-icon');
+        const navMenu = document.querySelector('nav');
+    
+        // Add click event listener to the burger icon
+        burgerIcon.addEventListener('click', function () {
+            // Toggle the 'active' class on both the burger icon and the menu
+            burgerIcon.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    });
+    
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const boutonContact = document.getElementById("contact-button");
     const boutonContactPost = document.getElementById("contact-post");
@@ -114,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     /////////////////////////////////////////////////////////////////////////
     
-    // Overlay des photos de photo_block.php //
+    // Overlay des photos de photo_block.php
     
     function overlay() {
         // Apparition de l'overlay au survol
@@ -122,17 +140,15 @@ document.addEventListener("DOMContentLoaded", function () {
     
         autresPhotos.forEach(element => {
             const overlay = element.querySelector('.survol-photo');
-            const lightbox = document.querySelector('.lightbox');
             const oeil = element.querySelector('.oeil');
             const divLienPhoto = element.querySelector('.lien-photo');
-            const lienPhoto = divLienPhoto.textContent.trim();
+            const lienPhoto = divLienPhoto.innerHTML;
+    
     
             // Début du survol
             element.addEventListener('mouseenter', function() {
                 overlay.style.display = 'block';
-                //lightbox.style.display = 'block';
             });
-    
             // Fin du survol
             element.addEventListener('mouseleave', function() {
                 overlay.style.display = 'none';
@@ -151,22 +167,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
-    /////////////////////////////////////////////////////////////////////////
-
-    // Gestion du menu burger //
-    
-    document.addEventListener('DOMContentLoaded', function () {
-        // Get the burger icon and menu
-        const burgerIcon = document.getElementById('burger-icon');
-        const navMenu = document.querySelector('nav');
-    
-        // Add click event listener to the burger icon
-        burgerIcon.addEventListener('click', function () {
-            // Toggle the 'active' class on both the burger icon and the menu
-            burgerIcon.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-    });
-    
     

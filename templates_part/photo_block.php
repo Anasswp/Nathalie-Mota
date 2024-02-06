@@ -43,10 +43,10 @@
                 <i class="fa-regular fa-eye oeil" style="color: #ffffff;"></i>
             </div>
             <div class="bas-survol">
-                <div class="...">
+                <div class="survol-reference">
                     <?php echo $reference_photo ?>
                 </div>
-                <div class="...">
+                <div class="survol-categorie">
                     <?php echo $liste_categories; ?>
                 </div>
             </div>
