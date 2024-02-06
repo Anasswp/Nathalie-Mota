@@ -2,12 +2,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Gestion de l'ouverture et de la fermeture des menus déroulants
 
+    let menu;
+
     function menuDeroulant(menuId, optionsId) {
         const menu = document.getElementById(menuId);
         const options = document.getElementById(optionsId);
         const fleche = menu.querySelector(".menu-fleche");
         const blocCache = menu.querySelector(".cache");
         const blocVisible = menu.querySelector(".visible");
+
+        // Nouvelle fonction pour mettre à jour le titre du menu de catégorie
+        function mettreAJourMenuCategorie(optionSelectionnee) {
+            const categorieTitre = document.querySelector("#categorie-titre .menu-titre");
+            categorieTitre.textContent = optionSelectionnee.textContent;
+        }
 
         fleche.addEventListener("click", function() {
             // Si le menu est déjà ouvert au clic
@@ -32,10 +40,60 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Nouvelle fonction pour mettre à jour le texte du menu de catégorie
+    function choixOption(titreId, optionsId, titreAModifier) {
+        const options = document.getElementById(optionsId);
+        const choixPossibles = options.querySelectorAll(".menu-option");
+
+        // Ajout d'une class pour le dernier élément afin de gérer le border radius
+        choixPossibles[choixPossibles.length - 1].classList.add("dernier");
+
+        choixPossibles.forEach(function(option, index) {
+            option.addEventListener("click", function() {
+                // Récupération du titre de l'élément pour le passer en titre de menu déroulant
+                titreAModifier.textContent = option.textContent;
+
+                // Suppression des class ajoutées aux précédents clics
+                choixPossibles.forEach(function(choix) {
+                    choix.classList.remove("selectionne");
+                    choix.classList.remove("dernier-selectionne");
+                });
+
+                // Ajout de la class pour l'élément sélectionné
+                option.classList.add("selectionne");
+
+                // Si c'est le dernier élément de la liste, la class est différente afin d'intégrer un border radius
+                if (index === choixPossibles.length - 1) {
+                    option.classList.add("dernier-selectionne");
+                }
+
+                // Fermer le menu déroulant après la sélection
+                options.style.display = "none";
+                menu.style.borderRadius = "8px";
+                menu.classList.remove("menu-ouvert");
+                fleche.classList.remove("rotation");
+                options.classList.remove("apparition");
+                blocCache.style.display = "none";
+                blocVisible.style.display = "block";
+
+                // Mettre à jour le titre du menu avec l'option sélectionnée
+                mettreAJourMenuCategorie(option);
+            });
+        });
+    }
+
+    // Définition de l'emplacement du titre à mettre à jour
+    const categorieZone = document.querySelector("#categorie-titre .menu-titre");
+    const formatZone = document.querySelector("#format-titre .menu-titre");
+    const triZone = document.querySelector("#tri-titre .menu-titre");
+
     // Appels de la fonction pour chaque menu déroulant
     menuDeroulant("categorie-titre", "categorie-options");
     menuDeroulant("format-titre", "format-options");
     menuDeroulant("tri-titre", "tri-options");
+
+    // Appels de la fonction pour le menu de catégorie
+    choixOption("categorie-titre", "categorie-options", categorieZone);
 
     //////////////////////////////////////////////////////////////////
 
@@ -79,16 +137,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Définition de l'emplacement du titre à mettre à jour
-    const categorieZone = document.querySelector("#categorie-titre .menu-titre");
-    const formatZone = document.querySelector("#format-titre .menu-titre");
-    const triZone = document.querySelector("#tri-titre .menu-titre");
-
-    // Appels de la fonction pour chaque menu déroulant
-    choixOption("categorie-titre", "categorie-options", categorieZone);
-    choixOption("format-titre", "format-options", formatZone);
-    choixOption("tri-titre", "tri-options", triZone);
-
 
 ////////////////////////////////////////////////////////////////////
 
@@ -107,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Création d'une fonction pour la gestion du bouton charger plus en cas de filtrage avant son utilisation
     function surveillerChargerPlus() {
-        var nombrePhotos = zoneLesPhotos.querySelectorAll('.photo-block').length;
+        var nombrePhotos = zoneLesPhotos.querySelectorAll('.autres-photos').length;
         if (nombrePhotos < 12) {
             boutonChargerPlus.style.display = "none";
         }
@@ -168,12 +216,15 @@ function miseAJourPhotos(category, format, order, titreAModifier) {
             overlay();
             
             // Mettre à jour le titre du bouton avec le filtre sélectionné
-            titreAModifier.textContent = category;  // Assurez-vous d'ajuster cela selon vos besoins
+            if (titreAModifier) {
+                titreAModifier.textContent = category;
+            }
         },
         error: function(error) {
         }
     });
 }
+
 
     ////////////////////////////////////////////////////////////////////
 

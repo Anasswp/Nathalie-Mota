@@ -29,24 +29,28 @@
 ?>
 
 <!-- Affichage du bloc photo -->
-<div class="photo-block">
-    <!--Ajout d'une balise pour rendre chaque photo_block cliquable-->
-    <a href="<?php echo esc_url(get_permalink()); ?>">
-        <div class="photo-details">
-            <?php echo $titre_post; ?>
-        </div>
-        <?php echo $photo_post; ?>
-        <div class="icons-container">
-            <div class="icon expand-icon">
+<div class="autres-photos">
+    <div class="lien-photo">
+        <?php echo $lien_post; ?>
+    </div>
+    <?php echo $photo_post; ?>
+    <div class="survol-photo">
+        <div class="structuration-survol-photo">
+            <div class="haut-survol">
                 <i class="fa-solid fa-expand full-screen" style="color: #ffffff;"></i>
             </div>
-            <div class="icon eye-icon autres-photos">
+            <div class="milieu-survol">
                 <i class="fa-regular fa-eye oeil" style="color: #ffffff;"></i>
             </div>
-            <div class="icon third-icon survol-categorie">
-                <?php echo $liste_categories; ?>
+            <div class="bas-survol">
+                <div class="...">
+                    <?php echo $reference_photo ?>
+                </div>
+                <div class="...">
+                    <?php echo $liste_categories; ?>
+                </div>
             </div>
         </div>
-    </a>
+    </div>
 </div>
 

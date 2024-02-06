@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Gestionnaire d'événements pour chaque élément avec la classe "photo-block"
-    const photoBlocks = document.querySelectorAll('.photo-block');
+    const photoBlocks = document.querySelectorAll('.autres-photos');
 
     photoBlocks.forEach(photoBlock => {
         photoBlock.addEventListener('click', function (event) {
@@ -114,18 +114,18 @@ document.addEventListener("DOMContentLoaded", function () {
     
     /////////////////////////////////////////////////////////////////////////
     
-    // Overlay des photos de photo_block.php
+    // Overlay des photos de photo_block.php //
     
     function overlay() {
         // Apparition de l'overlay au survol
-        const autresPhotos = document.querySelectorAll('.photo-block');
+        const autresPhotos = document.querySelectorAll('.autres-photos');
     
         autresPhotos.forEach(element => {
-            const overlay = element.querySelector('.icons-container');
+            const overlay = element.querySelector('.survol-photo');
             const lightbox = document.querySelector('.lightbox');
             const oeil = element.querySelector('.oeil');
-            const divLienPhoto = element.querySelector('.photo-details');
-            const lienPhoto = divLienPhoto.textContent.trim();  // Utilisez textContent pour récupérer le texte
+            const divLienPhoto = element.querySelector('.lien-photo');
+            const lienPhoto = divLienPhoto.textContent.trim();
     
             // Début du survol
             element.addEventListener('mouseenter', function() {
@@ -153,6 +153,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /////////////////////////////////////////////////////////////////////////
+
+    // Gestion du menu burger //
     
     document.addEventListener('DOMContentLoaded', function () {
         // Get the burger icon and menu
