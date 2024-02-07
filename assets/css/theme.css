@@ -320,19 +320,27 @@ nav {
 
 /*********** Photo-block***********/
 .zone-les-photos {
-  max-width: 1440px;
   display: flex;
   flex-wrap: wrap;
-  text-align: center;
+  flex-direction: row;
   justify-content: center;
+  gap: 10px;
 }
 
 .autres-photos {
   width: 564px;
   height: 495px;
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
+}
+
+.autres-photos img {
+  width: 564px;
+  height: 495px;
+  object-fit: cover;
+}
+
+.block-content {
+  display: flex;
+  gap: 10px;
 }
 
 .survol-photo {
@@ -370,7 +378,6 @@ nav {
 /*********** Photos ***********/
 .container {
   width: 100%;
-  
   margin: 0 auto 20px;
   /* gap: 20px; */
   flex-wrap: wrap;
@@ -559,29 +566,26 @@ footer {
 
 
 /*********** Overlay lors du survol de la photo ***********/
-
 .lien-photo {
   display: none;
 }
 
-.zone-les-photos .autres-photos, .zone-photos .autres-photos {
+.affichage-des-photos .autres-photos, .autres-photos {
   position: relative;
 }
 
-.zone-les-photos .survol-photo, .zone-photos .survol-photo {
+.affichage-des-photos .survol-photo, .survol-photo {
   display: none;
   position: absolute;
   top: 0;
   left: 0;
   background-color: rgba(0,0,0,0.6);
-  width: 100%;
-  height: 98.5%;
   z-index: 65;
   justify-content: center;
   align-items: center;
 }
 
-.zone-les-photos .structuration-survol-photo, .zone-photos .structuration-survol-photo {
+.affichage-des-photos .structuration-survol-photo, .structuration-survol-photo {
   width: 100%;
   height: 100%;
   position: relative;
@@ -595,14 +599,14 @@ footer {
   line-height: 20px;
 }
 
-.zone-les-photos .haut-survol, .zone-photos .haut-survol {
+.affichage-des-photos .haut-survol, .haut-survol {
   transform: scale(1.6);
   position: absolute;
   top: 15px;
   left: 520px;
 }
 
-.zone-les-photos .haut-survol i, .zone-photos .haut-survol i {
+.affichage-des-photos .haut-survol i, .haut-survol i {
   background-color: #000;
   padding: 6px;
   border-radius: 50%;
@@ -610,17 +614,17 @@ footer {
   cursor: pointer;
 }
 
-.zone-les-photos .milieu-survol, .zone-photos .milieu-survol {
+.affichage-des-photos .milieu-survol, .milieu-survol {
   transform: scale(2.4);
   position: absolute;
 }
 
-.zone-les-photos .milieu-survol i, .zone-photos .milieu-survol i {
+.affichage-des-photos .milieu-survol i, .milieu-survol i {
   cursor: pointer;
   opacity: 0.8;
 }
 
-.zone-les-photos .bas-survol, .zone-photos .bas-survol {
+.affichage-des-photos .bas-survol, .bas-survol {
   display: flex;
   gap: 220px;
   transform: scale(1.5);
@@ -678,7 +682,7 @@ footer {
     padding-left: 0 !important;
   }
 
-  .zone-les-photos {
+  .affichage-des-photos {
     display: grid;
     align-items: center;
     justify-items: center;

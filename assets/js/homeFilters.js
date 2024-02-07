@@ -42,33 +42,36 @@ document.addEventListener("DOMContentLoaded", function() {
     // Gestion de l'option sélectionnée
 
     function choixOption(titreId, optionsId, titreAModifier) {
-        const options = document.getElementById(optionsId);
-        const choixPossibles = options.querySelectorAll(".menu-option");
+            const options = document.getElementById(optionsId);
+            const choixPossibles = options.querySelectorAll(".menu-option");
+            const menu = document.getElementById(titreId);
 
-        // Ajout d'une class pour le dernier élément afin de gérer le border radius
-        choixPossibles[choixPossibles.length - 1].classList.add("dernier");
+            choixPossibles.forEach(function(option, index) {
+                option.addEventListener("click", function() {
+                    // Fermer le menu déroulant
+                    options.style.display = "none";
+                    menu.style.borderRadius = "8px";
+                    menu.classList.remove("menu-ouvert");
 
-        choixPossibles.forEach(function(option, index) {
-            option.addEventListener("click", function() {
-                // Récupération du titre de l'élément pour le passer en titre de menu déroulant
-                titreAModifier.textContent = option.textContent;
+                    // Mettre à jour le titre du menu déroulant
+                    titreAModifier.textContent = option.textContent;
 
-                // Suppression des class ajoutées aux précédents clics
-                choixPossibles.forEach(function(choix) {
-                    choix.classList.remove("selectionne");
-                    choix.classList.remove("dernier-selectionne");
+                    // Suppression des classes ajoutées précédemment
+                    choixPossibles.forEach(function(choix) {
+                        choix.classList.remove("selectionne");
+                        choix.classList.remove("dernier-selectionne");
+                    });
+
+                    // Ajout de la classe pour l'élément sélectionné
+                    option.classList.add("selectionne");
+
+                    // Si c'est le dernier élément de la liste, la classe est différente pour intégrer un border-radius
+                    if (index === choixPossibles.length - 1) {
+                        option.classList.add("dernier-selectionne");
+                    }
                 });
-
-                // Ajout de la class pour l'élément sélectionné
-                option.classList.add("selectionne");
-
-                // Si c'est le dernier élément de la liste, la class est différente afin d'intégrer un border radius
-                if (index === choixPossibles.length - 1) {
-                    option.classList.add("dernier-selectionne");
-                }
             });
-        });
-    }
+        }
 
     // Définition de l'emplacement du titre à mettre à jour
     const categorieZone = document.querySelector("#categorie-titre .menu-titre");

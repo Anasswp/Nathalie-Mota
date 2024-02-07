@@ -2,7 +2,7 @@
     // Récupération des informations de la photo
     $titre_post = get_the_title();
     $titre_nettoye = sanitize_title($titre_post);
-    $lien_post = '/photographies/'. $titre_nettoye;
+    $lien_post = './photographies/'. $titre_nettoye;
     $photo_post = get_the_content();
     $date_post = get_the_date('Y');
     $reference_photo = get_field('reference');
@@ -40,7 +40,7 @@
                 <i class="fa-solid fa-expand full-screen" style="color: #ffffff;"></i>
             </div>
             <div class="milieu-survol">
-                <i class="fa-regular fa-eye oeil" style="color: #ffffff;"></i>
+                <a href="<?php echo $lien_post; ?>"><i class="fa-regular fa-eye oeil" style="color: #ffffff;"></i></a>
             </div>
             <div class="bas-survol">
                 <div class="survol-reference">
@@ -53,4 +53,6 @@
         </div>
     </div>
 </div>
+
+
 

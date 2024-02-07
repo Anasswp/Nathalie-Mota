@@ -14,7 +14,7 @@
     });
     
 
-
+// Fonction pour rediriger vers la page de la photo
 
 document.addEventListener("DOMContentLoaded", function () {
     const boutonContact = document.getElementById("contact-button");
