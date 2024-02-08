@@ -8,6 +8,7 @@ body {
 }
 
 header {
+  max-width: 1440px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -338,6 +339,7 @@ nav {
 
 .block-content {
   display: flex;
+  justify-content: space-between;
   gap: 10px;
 }
 
@@ -721,6 +723,10 @@ nav {
 }
 
 /* Affiche le menu burger actif */
+.banner-content {
+  padding: 0;
+}
+
 nav.active {
   display: flex;
   opacity: 1;
@@ -827,5 +833,32 @@ nav.active {
     width: 293px;
     height: 260px;
 }
+
+.single-post {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.single-post h2 {
+  font-size: 46px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0em;
+}
+
+.single-container {
+  padding-top: 0 !important;
+}
+
+.single-post {
+  align-items: center;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+}
+
 }
 

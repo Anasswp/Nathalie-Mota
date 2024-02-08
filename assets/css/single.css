@@ -1,6 +1,6 @@
 .single-container{
   width: 50%;
-  padding-top: 8%;
+  padding-top: 20%;
 }
 
 .single-post {
@@ -13,23 +13,22 @@
   border-bottom: 1px solid black;
 }
 
-
 .single-info {
   text-transform: uppercase;
 }
 
 .single-info h2 {
-  width: 50vw;
   max-width: 420px;
-  font-size: 3vw;
   font-style: italic;
   font-weight: 400;
   text-transform: uppercase;
 }
 
 .single-image {
-  width: 50%;
+  display: flex;
   height: auto;
+  width: 50%;
+  justify-content: flex-end;
 }
 
 .single-content {
@@ -45,10 +44,11 @@
 
 .banner-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
   width: 100%;
-  max-width: 1420px;
+  max-width: 1220px;
   margin: auto;
   padding: 30px 20px 30px;
   font-family: 'Space Mono', monospace;
