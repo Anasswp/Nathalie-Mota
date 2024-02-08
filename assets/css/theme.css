@@ -324,7 +324,10 @@ nav {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+  width: 100%;
+  max-width: 1440px;
   gap: 10px;
+  margin: 0 auto 20px;
 }
 
 .autres-photos img {
@@ -645,10 +648,7 @@ footer {
 
 /***** Media query : max-width: 1024px ******/
 @media all and (max-width: 1024px) {
-  .autres-photos img {
-    width: 465px;
-    height: 400px;
-  }
+
 
   .logo {
     margin-left: 15px;
@@ -819,16 +819,11 @@ nav.active {
     align-items: center;
     cursor: pointer;
   }
-
-  .autres-photos {
-    width: 317px;
-    height: 278px;
-  }
 }
 
 
 @media only screen and (max-width: 425px) {
-  .autres-photos {
+  .autres-photos img {
     width: 293px;
     height: 260px;
 }
