@@ -80,7 +80,7 @@ function charger_plus() {
     $ordreTriage = $_POST['order'];
     $args = array(
         'post_type' => 'photographies',
-        'posts_per_page' => 12,
+        'posts_per_page' => 8,
         'orderby' => 'date',
         'order' => $ordreTriage,
         'paged' => $page,
@@ -133,7 +133,7 @@ function filtrer_photos() {
 
     $args = array(
         'post_type' => 'photographies',
-        'posts_per_page' => 12,
+        'posts_per_page' => 16,
         'orderby' => 'date',
         'order' => $order,
         'paged' => 1,
