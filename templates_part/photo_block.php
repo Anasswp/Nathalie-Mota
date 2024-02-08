@@ -2,7 +2,7 @@
     // Récupération des informations de la photo
     $titre_post = get_the_title();
     $titre_nettoye = sanitize_title($titre_post);
-    $lien_post = './photographies/'. $titre_nettoye;
+    $lien_post = get_site_url().'/photographies/'. $titre_nettoye;
     $photo_post = get_the_content();
     $date_post = get_the_date('Y');
     $reference_photo = get_field('reference');
