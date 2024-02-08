@@ -10,7 +10,7 @@ body {
 header {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
   
   margin: auto; 
@@ -649,8 +649,6 @@ footer {
 
 /***** Media query : max-width: 1024px ******/
 @media all and (max-width: 1024px) {
-
-
   .logo {
     margin-left: 15px;
   }
@@ -697,7 +695,7 @@ footer {
 
 
  
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
 .hero-title {
   display: none;
 }
@@ -710,15 +708,15 @@ footer {
 nav {
   display: none;
   flex-direction: column;
-  background-color: red; /* Fond rouge pour le menu burger lorsqu'il est actif */
+  background-color: red; 
   position: absolute;
-  top: 10%; /* Modifie la position initiale à 0 */
+  top: 10%; 
   left: 0;
   width: 100%;
   z-index: 1;
   opacity: 0;
-  transform: translateY(-100%); /* initialise le menu en dehors de l'écran */
-  transition: opacity 2s ease, transform 2s ease; /* Ajout de la transition pour l'opacité et la transformation */
+  transform: translateY(-100%); 
+  transition: opacity 2s ease, transform 2s ease; 
 }
 
 /* Affiche le menu burger actif */
@@ -758,7 +756,7 @@ nav.active {
   }
 }
 
-/* Ajouter l'animation à votre menu */
+/* Ajouter de l'animation au menu */
 nav.active {
   animation: move-from-top 2s ease;
 }
@@ -824,6 +822,14 @@ nav.active {
     align-items: center;
     cursor: pointer;
   }
+
+  .haut-survol {
+    left: 320px !important;
+  }
+
+  .bas-survol {
+    gap: 100px !important;
+  }
 }
 
 
@@ -858,6 +864,5 @@ h3 {
   display: flex;
   justify-content: center;
 }
-
 }
 

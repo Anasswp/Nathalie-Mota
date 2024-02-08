@@ -9,8 +9,6 @@ while (have_posts()) :
         </div>
 
 <?php
-endwhile; // End of the loop.
+endwhile;
 get_footer();
-
-wp_footer()
 ?>
