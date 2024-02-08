@@ -167,3 +167,5 @@ function filtrer_photos() {
 
 add_action('wp_ajax_filtrer_photos', 'filtrer_photos');
 add_action('wp_ajax_nopriv_filtrer_photos', 'filtrer_photos');
+
+add_filter( 'show_admin_bar', '__return_true' );
