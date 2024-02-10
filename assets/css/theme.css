@@ -647,6 +647,8 @@ footer {
 
 
 
+
+
 /***** Media query : max-width: 1024px ******/
 @media all and (max-width: 1024px) {
   .logo {
@@ -863,6 +865,15 @@ nav.active {
 h3 {
   display: flex;
   justify-content: center;
+}
+
+.banner-content {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.array-post {
+  display: none !important;
 }
 }
 
