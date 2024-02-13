@@ -53,7 +53,7 @@ nav {
   font-weight: 700;
 }
 
-/*********** Modal ***********/
+/*********** Modale ***********/
 .overlay {
   position: fixed;
   top: 0;
@@ -66,9 +66,8 @@ nav {
 
 .modale {
   position: fixed;
-  top: -5%;
-  left: 35%;
-  transform: translate(-50%, -50%);
+  top: 15%;
+  left: 40%;
   z-index: 1000;
   display: none;
   animation: move-down 2s 300ms both;
@@ -649,8 +648,20 @@ footer {
 
 
 
-/***** Media query : max-width: 1024px ******/
+
+@media all and (max-width: 1440px) {
+  .modale {
+    top: 10%;
+    left: 34%;
+  }
+}
+
+
 @media all and (max-width: 1024px) {
+.modale {
+  left: 27%;
+}
+
   .logo {
     margin-left: 15px;
   }
@@ -698,6 +709,10 @@ footer {
 
  
 @media only screen and (max-width: 768px) {
+.modale {
+  left: 15%;
+}
+
 .hero-title {
   display: none;
 }
@@ -836,6 +851,22 @@ nav.active {
 
 
 @media only screen and (max-width: 425px) {
+.modale {
+  width: 130%;
+}
+
+.wpcf7-form p textarea {
+  width: 90%;
+}
+
+.wpcf7-form p .wpcf7-text {
+  width: 90%;
+}
+
+.modale-contact {
+  width: 57%;
+}
+
   .autres-photos img {
     width: 293px;
     height: 260px;
@@ -877,3 +908,13 @@ h3 {
 }
 }
 
+
+@media only screen and (max-width: 320px) {
+  .modale-informations {
+    display: flow-root;
+  }
+
+  .wpcf7-form p .wpcf7-submit {
+    width: 235px;
+  }
+}
